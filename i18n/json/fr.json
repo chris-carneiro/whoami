@@ -1,0 +1,11 @@
+{
+  "language": "Français",
+   "projects": {
+    "teaTester": {
+      "description": "Mon projet"
+    },
+    "teaTester2": {
+      "description": "fr Tester 2"
+    }
+  }
+}
