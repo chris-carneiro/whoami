@@ -10,7 +10,7 @@ export default function Header() {
 
 function TerminalHeader(header: HeaderProps) {
   return (
-    <header className="px-4 py-2 max-w-full text-left bg-nigredo text-citrinitas">
+    <header className="px-4 py-2 max-w-full text-left text-citrinitas">
       <div className="mx-auto flex justify-between max-w-screen-xl">
         <Prompt name={header.name} />
         <LanguageSwitch />
@@ -24,7 +24,7 @@ function Prompt({ name }: { name: string }) {
     <div>
       <span className="text-albedo">&gt; ~</span>
       <span className="ml-4 text-citrinitas">{name}</span>
-      <span className="text-rubedo">.</span>
+      <span className="text-rubedo animate-pulse">.</span>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { type Config } from "tailwindcss";
 import { extendedColors } from "./tailwind/colors.ts";
+import { extendedAnimations } from "./tailwind/animations.ts";
 
 export default {
   content: [
@@ -7,7 +8,13 @@ export default {
   ],
   theme: {
     extend: {
-      colors: extendedColors
+      colors: extendedColors,
+      keyframes: {
+        ...extendedAnimations.keyframes,
+      },
+      animation: {
+        ...extendedAnimations.animation,
+      },
     },
   },
 } satisfies Config;

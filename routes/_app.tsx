@@ -14,7 +14,7 @@ export default function App({ Component }: PageProps) {
           <title>~ whoami</title>
           <link rel="stylesheet" href="/styles.css" />
         </Head>
-        <body class="bg-albedo text-nigredo">
+        <body class="bg-nigredo text-citrinitas">
           <Component />
         </body>
       </html>

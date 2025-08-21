@@ -1,5 +1,8 @@
 {
   "language": "English",
+  "hero": {
+    "title": "Firstname Lastname"
+  },
   "projects": {
     "teaTester": {
       "description": "My project"

@@ -10,3 +10,6 @@ _fresh/
 fresh.gen.ts
 # npm dependencies
 node_modules/
+
+
+.DS_Store
