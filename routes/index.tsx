@@ -1,6 +1,5 @@
 import { PageProps } from "$fresh/server.ts";
 import Header from "../components/Header.tsx";
-import I18nText from "../islands/I18nText.tsx";
 import { TranslationState } from "./_middleware.ts";
 import { TranslationProvider } from "../islands/TranslationContext.tsx";
 import Hero from "../components/Hero.tsx";

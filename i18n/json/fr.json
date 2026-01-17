@@ -1,7 +1,9 @@
 {
   "language": "Français",
-  "hero" : {
-    "title": "Prénom Nom"
+   "hero": {
+    "job": {
+      "title": "WIP Mais FR"
+    }
   },
    "projects": {
     "teaTester": {

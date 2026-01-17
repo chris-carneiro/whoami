@@ -10,8 +10,10 @@ function flattenLabels(
   obj: Record<string, string>,
   prefix = "",
 ): Record<string, string> {
+
   return Object.entries(obj).reduce((acc, [key, value]) => {
     const path = prefix ? `${prefix}.${key}` : key;
+    
     if (typeof value === "object" && value !== null) {
       Object.assign(acc, flattenLabels(value, path));
     } else {
@@ -21,8 +23,8 @@ function flattenLabels(
   }, {} as Record<string, string>);
 }
 
-const flattenedFr = flattenLabels(fr as Record<string, string>);
-const flattenedEn = flattenLabels(en as Record<string, string>);
+const flattenedFr = flattenLabels(fr as unknown as Record<string, string>);
+const flattenedEn = flattenLabels(en as unknown as Record<string, string>);
 
 const LABELS = new Map<Lang, Record<string, string>>([
   [FR, flattenedFr],

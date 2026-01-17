@@ -1,6 +1,6 @@
 import { type Config } from "tailwindcss";
 import { extendedColors } from "./tailwind/colors.ts";
-import { extendedAnimations } from "./tailwind/animations.ts";
+import { extendedAnimations, extendedTransitions } from "./tailwind/animations.ts";
 
 export default {
   content: [
@@ -15,6 +15,7 @@ export default {
       animation: {
         ...extendedAnimations.animation,
       },
+      transitionDuration: extendedTransitions,
     },
   },
 } satisfies Config;

@@ -1,6 +1,7 @@
 // tailwind/colors.ts
 export const extendedColors = {
-  nigredo: "#2a2a2ae5",
+  nigreydo: "#2a2a2ae5",
+  nigredo: "#000813",
   albedo: "#fafafae5",
   citrinitas: "#FFE989e5",
   rubedo: "#DC282De5",
