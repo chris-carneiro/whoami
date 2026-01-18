@@ -16,8 +16,10 @@ function Prompt() {
     <div>
       <span className="text-albedo">&gt; ~</span>
       {/* Commands */}
-      {/* <span className="ml-4 text-citrinitas">{name}</span>
-      <span className="text-rubedo animate-pulse">.</span> */}
+      {
+        /* <span className="ml-4 text-citrinitas">{name}</span>
+      <span className="text-rubedo animate-pulse">.</span> */
+      }
     </div>
   );
 }
