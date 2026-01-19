@@ -1,5 +1,5 @@
 {
- "tasks": {
+  "tasks": {
     "check": "deno fmt --check . && deno lint . && deno check",
     "dev": "vite",
     "build": "vite build",
@@ -9,10 +9,12 @@
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"],
   "imports": {
+    "@/": "./",
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
     "preact": "npm:preact@^10.27.2",
     "@preact/signals": "npm:@preact/signals@^2.5.0",
-    "tailwindcss": "npm:tailwindcss@^3.4.1",
+    "tailwindcss": "npm:tailwindcss@^4.1.10",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.18",
     "$std/": "https://deno.land/std@0.216.0/",
     "fresh": "jsr:@fresh/core@^2.2.0",
     "vite": "npm:vite@^7.3.1"
