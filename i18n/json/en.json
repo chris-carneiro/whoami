@@ -3,7 +3,8 @@
   "hero": {
     "job": {
       "title": "WIP"
-    }
+    },
+    "intro": "Software Engineer with over ten years of experience, focused on code quality and performance optimization, particularly through web application refactoring. Skilled in Scrum framework, I have also led retrospectives to enhance team processes. Team cohesion is crucial to me, and I foster a collaborative environment. I particularly value pair programming and Test-Driven Development (TDD) for their effectiveness in skill development and continuous code improvement. I'm also enthusiastic about contributing to innovative projects and exploring new technologies."
   },
   "projects": {
     "teaTester": {

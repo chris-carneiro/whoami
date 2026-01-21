@@ -6,11 +6,13 @@ export default function I18nText({ labelKey }: { labelKey: string }) {
   const { lang } = useContext(TranslationContext)!;
 
   return (
-    <span
-      key={lang} // if we need to restart animation based on more than 1 variable => `${lang}:${labelKey}`
-      class="animate-fade-in transition-opacity"
-    >
-      {translate(labelKey, lang)}
-    </span>
+    <>
+      <span
+        key={lang} // if we need to restart animation based on more than 1 variable => `${lang}:${labelKey}`
+        class="animate-fade-in transition-opacity"
+      >
+        {translate(labelKey, lang)}
+      </span>
+    </>
   );
 }

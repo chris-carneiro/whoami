@@ -1,11 +1,12 @@
 {
   "language": "Français",
-   "hero": {
+  "hero": {
     "job": {
       "title": "WIP Mais FR"
-    }
+    },
+    "intro": "Ingénieur logiciel avec plus de dix ans d'expérience, orienté vers la qualité du code et l'optimisation des performances, notamment à travers le refactoring d'applications web. Bonnes connaissances de Scrum, j'ai également animé des rétrospectives afin d'améliorer les processus d'équipe. La cohésion d'équipe est essentielle à mes yeux, et je m'attache à favoriser un environnement collaboratif. J'accorde une importance particulière au pair programming et au développement piloté par les tests (TDD), reconnus pour leur efficacité dans le développement des compétences et l'amélioration continue du code. Je suis également enthousiaste à l'idée de contribuer à des projets innovants et d'explorer de nouvelles technologies."
   },
-   "projects": {
+  "projects": {
     "teaTester": {
       "description": "Mon projet"
     },
