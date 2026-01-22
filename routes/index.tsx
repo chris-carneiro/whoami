@@ -3,6 +3,7 @@ import Header from "../components/Header.tsx";
 import { TranslationState } from "./_middleware.ts";
 import { TranslationProvider } from "../islands/TranslationContext.tsx";
 import Hero from "../components/Hero.tsx";
+import { Experiences } from "../components/Experiences.tsx";
 
 
 export default function Home(ctx: PageProps<unknown, TranslationState>) {
@@ -16,6 +17,7 @@ export default function Home(ctx: PageProps<unknown, TranslationState>) {
       >
         <Header />
         <Hero />
+        <Experiences />
       </TranslationProvider>
     </>
     

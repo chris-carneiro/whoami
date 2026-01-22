@@ -6,12 +6,51 @@
     },
     "intro": "Software Engineer with over ten years of experience, focused on code quality and performance optimization, particularly through web application refactoring. Skilled in Scrum framework, I have also led retrospectives to enhance team processes. Team cohesion is crucial to me, and I foster a collaborative environment. I particularly value pair programming and Test-Driven Development (TDD) for their effectiveness in skill development and continuous code improvement. I'm also enthusiastic about contributing to innovative projects and exploring new technologies."
   },
-  "projects": {
-    "teaTester": {
-      "description": "My project"
+  "experiences": {
+    "chanel": {
+      "jobtitle": "Freelance Software Engineer",
+      "details": "CHANEL - Full time Contract - Remote - Jul 2022 to Apr 2024",
+      "description": "I contributed to the ongoing refactoring of a web application for the internal point of sale reference system, with the goal of reducing technical debt while adding new features. Emphasis was placed on quality and performance, particularly in database design (SQL Server), involving extensive unit and integration testing, Test-Driven Development (TDD), and rigorous code reviews."
     },
-    "teaTester2": {
-      "description": "Tester 2"
+    "kayentis": {
+      "jobtitle": "Software Engineer",
+      "details": "Kayentis - Full time Position - Grenoble, France - Mar 2018 to Mar 2022",
+      "description": "I sarted as a back-end developer on Clin'Form 3, a multi-platform eCOA solution for clinical trials, I progressively broadened my scope across tools and technologies. I added features to the REST API, maintained internal data loaders (Python), and co-designed production-ready PoCs like an API request interceptor. I introduced property-based testing (junit-quickcheck) to improve Groovy scripts validation, designed mobile test automation prototypes, and supported CI (Jenkins) and front-end dev (Angular, Android). Strong focus on quality via TDD, code reviews, pair/mob programming, and active involvement in functional discussions with the PO and dev team."
+    },
+    "open": {
+      "jobtitle": "Software Engineer",
+      "details": "Open - Full time Position - Grenoble, France - Fev 2017 to Mar 2018",
+      "description": "**Android developer**:  <br>First project Team: 2 Android developers, 1 back-end developer. <br> We developed and released a secure browser for android focused on user privacy.<br><br>Second project  Team: 1 Android developer, 1 iOS developer, 1 Back-end developer.<br> I developed the main frame and architecture of the coaching feature of an existing android app. This app connects via bluetooth to a 'Smart pillow'.  <br><br>**Full stack developer**  <br>I Developed from scratch front (Hybrid application using Kony framework) and back-end (hosted in IBM bluemix) using Spring Boot framework.  <br>The app is mainly used as a support utility. It allows the back-end to forward a dynamic e-mail to a decicated IT support team."
+    },
+    "wifitoggler": {
+      "jobtitle": "Wi-Fi-Togger Android",
+      "details": "Open source project - 2015 - 2016",
+      "description": "I designed and released an open-source Android application for automatic Wi-Fi management. [Wi-Fi-Toggler - GitHub](https://github.com/chris-carneiro/Wi-Fi-Toggler)"
+    },
+    "laroueverte": {  
+      "jobtitle": "font-semibold text-3xl mb-1.5 text-rubedo",
+      "details": "LaRoueVerte.com - Contract - Grenoble, France - Mar 2015 to Mar 2015",
+      "description": "First Client: LaRoueVerte.com<br> Feasability study and prototyping of a carpooling Android application. (The content is under NDA)"
+    },
+    "astek": {
+      "jobtitle": "Android developer (Consultant) ",
+      "details": "SFR (via Astek) - Full time position - Grenoble, France - Jun 2013 - Nov 2014",
+      "description": " - Developed a network diagnostic app (GIS mapping, speed tests, incident reporting).<br> - Migrated SOAP to REST (JSON) for a visual voicemail app (1M+ downloads), with UI integration.<br> - Added features to a mobile security app (100K+ downloads): remote lockdown, geolocation, and backup."
+    },
+    "inilead": {
+      "jobtitle": "Software Engineer (Consultant)",
+      "details": "Inilead - Full time position - San Francisco - New York City, USA - Sep 2012 - Dec 2012",
+      "description": "Inilead provides consultants to start-ups that need support on their projects. I first started in San Francisco, where I registered a new consulting branch and found a workplace. At the same time, I looked for a C2C contract as a Junior Java Developer. As time passed quickly, I decided to try my luck in New York where a branch was already in place. Unfortunately, finding a C2C contract proved itself to be complicated since most of the companies that I contacted were instead looking for either a contractor or a full-time engineer eligible to work (I had an E-2 visa)."
+    },
+    "comarch": {
+      "jobtitle": "Software Engineer",
+      "details": "Comarch - Full time position - Grenoble, France - Oct 2011 to Jul 2012",
+      "description": "I contributed to the integration of an M2M platform into a CRM portal (Java, PL/SQL, Groovy, Liferay) for Deutsche Telekom."
+    },
+    "capgemini": {
+      "jobtitle": "Intern - Software Engineer (Consultant)",
+      "details": "Capgemini Télécom Média Défense - Apprenticeship/Full time - Grenoble, France - Jul 2010 à Oct 2011",
+      "description": "I drastically optimized a data processing tool written in PL/SQL for Orange (95% reduction in execution time). I also contributed to the implementation of a service for detecting available IP address ranges for France Telecom (Java, WebLogic, XML)."
     }
   }
 }
