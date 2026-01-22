@@ -11,6 +11,7 @@
   "imports": {
     "@/": "./",
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
+    "marked": "npm:marked@^17.0.1",
     "preact": "npm:preact@^10.27.2",
     "@preact/signals": "npm:@preact/signals@^2.5.0",
     "tailwindcss": "npm:tailwindcss@^4.1.10",

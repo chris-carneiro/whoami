@@ -6,12 +6,51 @@
     },
     "intro": "Ingénieur logiciel avec plus de dix ans d'expérience, orienté vers la qualité du code et l'optimisation des performances, notamment à travers le refactoring d'applications web. Bonnes connaissances de Scrum, j'ai également animé des rétrospectives afin d'améliorer les processus d'équipe. La cohésion d'équipe est essentielle à mes yeux, et je m'attache à favoriser un environnement collaboratif. J'accorde une importance particulière au pair programming et au développement piloté par les tests (TDD), reconnus pour leur efficacité dans le développement des compétences et l'amélioration continue du code. Je suis également enthousiaste à l'idée de contribuer à des projets innovants et d'explorer de nouvelles technologies."
   },
-  "projects": {
-    "teaTester": {
-      "description": "Mon projet"
+  "experiences": {
+    "chanel": {
+      "jobtitle": "Ingénieur Logiciel Freelance",
+      "details": "CHANEL - Contrat Temps plein - Télétravail - Jui 2022 à Avr 2024 ",
+      "description": "Participation au refactoring en cours d'une application web destinée au système interne de référence des points de vente, avec pour objectif de réduire la dette technique tout en ajoutant de nouvelles fonctionnalités. Un accent particulier a été mis sur la qualité et les performances, notamment au niveau de la conception de la base de données (SQL Server), avec la mise en oeuvre de tests unitaires et d'intégration approfondis, du développement piloté par les tests (TDD) et de revues de code rigoureuses."
     },
-    "teaTester2": {
-      "description": "fr Tester 2"
+    "kayentis": {
+      "jobtitle": "Ingénieur Logiciel",
+      "details": "Kayentis - Temps plein - Grenoble, France - Mar 2018 à Mar 2022",
+      "description": "J'ai commencé comme développeur back-end sur Clin'Form 3, une solution eCOA multiplateforme dédiée aux essais cliniques, puis j'ai progressivement élargi mon périmètre d'intervention à différents outils et technologies. J'ai contribué à l'ajout de fonctionnalités sur l'API REST, à la maintenance de chargeurs de données internes (Python), et à la co-conception de preuves de concept prêtes pour la production, comme un intercepteur de requêtes API. J'ai introduit les tests basés sur les propriétés (junit-quickcheck) afin d'améliorer la validation des scripts Groovy, conçu des prototypes d'automatisation de tests mobiles, et apporté un support au CI (Jenkins) ainsi qu'au développement front-end (Angular, Android). Fort accent mis sur la qualité via le TDD, les revues de code, le pair/mob programming, et une implication active dans les échanges fonctionnels avec le PO et l'équipe de développement."
+    },
+    "open": {
+      "jobtitle": "Ingénieur Logiciel",
+      "details": "Open - Temps plein - Grenoble, France - Fev 2017 à Mar 2018",
+      "description": "**Développeur Android**:<br> Premier projet<br> Équipe : 2 développeurs Android, 1 développeur back-end<br> Nous avons développé et publié un navigateur sécurisé pour Android, axé sur la protection de la vie privée des utilisateurs.<br><br> Deuxième projet<br> Équipe : 1 développeur Android, 1 développeur iOS, 1 développeur back-end <br> J'ai développé la structure principale et l'architecture de la fonctionnalité de coaching d'une application Android existante. Cette application se connecte en Bluetooth à un « smart pillow » (oreiller connecté).<br><br> **Développeur Full stack**: <br> J'ai développé from scratch le front-end (application hybride utilisant le framework Kony) et le back-end (hébergé sur IBM Bluemix) en utilisant le framework Spring Boot.<br> L'application est principalement utilisée comme outil de support. Elle permet au back-end de transférer dynamiquement des e-mails vers une équipe de support informatique dédiée."
+    },
+    "wifitoggler": {
+      "jobtitle": "Wi-Fi-Toggler Android ",
+      "details": "Projet Open source - 2015 - 2016",
+      "description": "Conception et publication d'une application Android open source de gestion automatique du Wi-Fi. [Wi-Fi-Toggler - GitHub](https://github.com/chris-carneiro/Wi-Fi-Toggler)"
+    },
+    "laroueverte": {
+      "jobtitle": "Ingénieur Logiciel Freelance",
+      "details": "LaRoueVerte.com - Contrat - Grenoble, France - Mar 2015 à  Mar 2015",
+      "description": "Premier client : LaRoueVerte.com<br> Étude de faisabilité et prototypage d'une application Android de covoiturage. (Le contenu est confidentiel)"
+    },
+    "astek": {
+      "jobtitle": "Développeur Android (Consultant) ",
+      "details": "SFR (via Astek) - Temps plein - Grenoble, France - Juin 2013 à Nov 2014",
+      "description": " Développement d'une application de diagnostique réseau (cartographie GIS, speed tests, incidents).<br> Migration SOAP vers REST (JSON) sur une application de messagerie vocale visuelle (1M+ téléchargements), avec intégration UI.<br> Ajout de fonctionnalités à une application de sécurité mobile (100K+ téléchargements) : géolocalisation, verrouillage et sauvegarde à distance."
+    },
+    "inilead": {
+      "jobtitle": "Ingénieur Logiciel (Consultant)",
+      "details": "Inilead - Temps plein - San Franciso - New York City, USA - Sep 2012 à Dec 2012",
+      "description": "Inilead fournit des consultants à des start-ups ayant besoin d'accompagnement sur leurs projets. J'ai d'abord commencé à San Francisco, où j'ai créé une nouvelle filiale de conseil et trouvé un lieu de travail. En parallèle, je recherchais un contrat en C2C en tant que développeur Java junior. Le temps passant rapidement, j'ai décidé de tenter ma chance à New York, où une filiale existait déjà. Malheureusement, la recherche d'un contrat en C2C s'est révélée compliquée, car la plupart des entreprises que j'ai contactées recherchaient plutôt soit un prestataire, soit un ingénieur en CDI autorisé à travailler (je disposais d'un visa E-2)."
+    },
+    "comarch": {
+      "jobtitle": "Ingénieur Logiciel",
+      "details": "Comarch - Temps plein - Grenoble - Oct 2011 à Jui 2012",
+      "description": "J'ai contribué à l'intégration d'une plateforme M2M dans un portail CRM (Java, PL/SQL, Groovy, Liferay) pour Deutsche Telekom."
+    },
+    "capgemini": {
+      "jobtitle": "Stagiaire - Ingénieur Logiciel (Consultant)",
+      "details": "Capgemini Télécom Média Défense - Alternance/Temps plein - Grenoble - Jui 2010 à Oct 2011",
+      "description": "J'ai optimisé de façon drastique un outil de traitements de données écrit en PL/SQL pour Orange (gain de 95% sur le temps d'exécution initial). <br> J'ai contribué à l'implémentation d'un service de détection de plages IP disponibles pour France Telecom (Java, WebLogic, XML)."
     }
   }
 }
