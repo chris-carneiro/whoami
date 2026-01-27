@@ -3,8 +3,8 @@ import I18nText from "../islands/I18nText.tsx";
 export function Experiences() {
   return (
     <>
-      <div class="flex flex-col gap-8 md:gap-16 px-10 justify-self-auto">
-        <h1 class="text-3xl font-semibold text-albedo">
+      <div class="flex flex-col gap-8 md:gap-16 px-10 my-6 justify-self-auto">
+        <h1 class="sm:text-3xl text-2xl font-semibold text-albedo">
           Experience
         </h1>
         <Experience name="chanel" />
@@ -30,16 +30,16 @@ function Experience(experience: ExperienceProps) {
   return (
     <>
       <section
-        class={`w-full min-w-0 max-w-7xl mx-auto mb-4 sm:px-10 text-xl ${experience.class}`}
+        class={`w-full min-w-0 max-w-7xl mx-auto mb-4 sm:px-10 text-lg sm:text-xl ${experience.class}`}
       >
         <I18nText
           labelKey={`experiences.${experience.name}.jobtitle`}
-          style="font-semibold text-3xl mb-1.5"
+          style="font-semibold sm:text-3xl mb-1.5"
         />
 
         <I18nText
           labelKey={`experiences.${experience.name}.details`}
-          style="font-semibold text-xl"
+          style="font-semibold sm:text-xl text-lg"
         />
 
         <I18nText

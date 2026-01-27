@@ -2,8 +2,8 @@ import LanguageSwitch from "../islands/LanguageSwitch.tsx";
 
 export default function Header() {
   return (
-    <header class="sticky top-0 z-10 px-4 py-2 min-w-xl max-w-full text-left text-citrinitas bg-nigreydo">
-      <div class="mx-auto flex justify-between max-w-(--breakpoint-xl)">
+    <header class="sticky top-0 z-10 px-4 py-2 max-w-full text-left text-citrinitas bg-nigreydo">
+      <div class="mx-auto flex gap-3 items-center justify-between w-full max-w-(--breakpoint-xl)">
         <Prompt />
         <LanguageSwitch />
       </div>
@@ -14,7 +14,7 @@ export default function Header() {
 function Prompt() {
   return (
     <div>
-      <span className="text-albedo">&gt; ~</span>
+      <span className="text-albedo">&gt; _</span>
       {/* Commands */}
       {
         /* <span className="ml-4 text-citrinitas">{name}</span>
