@@ -15,7 +15,7 @@
     "kayentis": {
       "jobtitle": "Software Engineer",
       "details": "Kayentis - Full time Position - Grenoble, France - Mar 2018 to Mar 2022",
-      "description": "I sarted as a back-end developer on Clin'Form 3, a multi-platform eCOA solution for clinical trials, I progressively broadened my scope across tools and technologies. I added features to the REST API, maintained internal data loaders (Python), and co-designed production-ready PoCs like an API request interceptor. I introduced property-based testing (junit-quickcheck) to improve Groovy scripts validation, designed mobile test automation prototypes, and supported CI (Jenkins) and front-end dev (Angular, Android). Strong focus on quality via TDD, code reviews, pair/mob programming, and active involvement in functional discussions with the PO and dev team."
+      "description": "I started as a back-end developer on Clin'Form 3, a multi-platform eCOA solution for clinical trials, I progressively broadened my scope across tools and technologies. I added features to the REST API, maintained internal data loaders (Python), and co-designed production-ready PoCs like an API request interceptor. I introduced property-based testing (junit-quickcheck) to improve Groovy scripts validation, designed mobile test automation prototypes, and supported CI (Jenkins) and front-end dev (Angular, Android). Strong focus on quality via TDD, code reviews, pair/mob programming, and active involvement in functional discussions with the PO and dev team."
     },
     "open": {
       "jobtitle": "Software Engineer",
@@ -49,7 +49,7 @@
     },
     "capgemini": {
       "jobtitle": "Intern - Software Engineer (Consultant)",
-      "details": "Capgemini Télécom Média Défense - Apprenticeship/Full time - Grenoble, France - Jul 2010 à Oct 2011",
+      "details": "Capgemini Télécom Média Défense - Apprenticeship / Full time - Grenoble, France - Jul 2010 à Oct 2011",
       "description": "I drastically optimized a data processing tool written in PL/SQL for Orange (95% reduction in execution time). I also contributed to the implementation of a service for detecting available IP address ranges for France Telecom (Java, WebLogic, XML)."
     }
   }
