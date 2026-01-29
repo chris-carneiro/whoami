@@ -1,10 +1,10 @@
 import { EN, FR, Lang } from "../utils/lang.ts";
-import { useContext } from "preact/hooks";
-import { TranslationContext } from "./TranslationContext.tsx";
+
 
 import en from "../i18n/json/en.json" with { type: "json" };
 import fr from "../i18n/json/fr.json" with { type: "json" };
 import { Labels } from "../i18n/labels.ts";
+import { useTranslation } from "./TranslationContext.tsx";
 
 interface LangItemProps {
   label: string;
@@ -13,15 +13,7 @@ interface LangItemProps {
 }
 
 export default function LanguageSwitch() {
-  const context = useContext(TranslationContext)!;
-
-  if (!context) {
-    throw new Error(
-      "TranslationContext must be used within a TranslationProvider",
-    );
-  }
-
-  const { lang, setLang, setLabels } = context;
+    const { lang, setLang, setLabels } = useTranslation();
 
   async function switchLang(newLang: Lang, labels: Labels) {
     await fetch(`/api/lang?lang=${newLang}`, { method: "POST" });

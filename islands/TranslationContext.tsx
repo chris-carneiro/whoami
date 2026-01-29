@@ -1,8 +1,9 @@
 
 import { createContext } from "preact";
-import { useState } from "preact/hooks";
+import { useContext, useState } from "preact/hooks";
 import { Labels } from "../i18n/labels.ts";
 import { Lang } from "../utils/lang.ts";
+
 
 export interface TranslationContextProps {
   labels: Labels;
@@ -11,7 +12,15 @@ export interface TranslationContextProps {
   setLang: (lang: Lang) => void;
 }
 
+
 export const TranslationContext = createContext<TranslationContextProps | null>(null);
+
+
+export function useTranslation() {
+  const ctx = useContext(TranslationContext);
+  if (!ctx) throw new Error("useTranslation must be inside TranslationProvider");
+  return ctx;
+}
 
 export function TranslationProvider(
   { initLabels: initialLabels, initLang: initialLang, children }: {
