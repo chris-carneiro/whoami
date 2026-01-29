@@ -14,7 +14,9 @@ export default function Header() {
 function Prompt() {
   return (
     <div>
-      <span className="text-albedo">&gt; _</span>
+      <span className="text-albedo">&gt; 
+        <span class="animate-blink">_</span>
+      </span>
       {/* Commands */}
       {
         /* <span className="ml-4 text-citrinitas">{name}</span>
