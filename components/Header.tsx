@@ -1,11 +1,20 @@
 import LanguageSwitch from "../islands/LanguageSwitch.tsx";
+import { Lang } from "../utils.ts";
 
-export default function Header() {
+
+interface Props {
+  lang: Lang;
+}
+
+export default function Header({ lang }: Props) {
   return (
-    <header class="sticky top-0 z-10 px-4 py-2 max-w-full text-left text-citrinitas bg-nigreydo">
+    <header class="sticky top-0 z-10 px-4 max-w-full text-left text-albedo bg-nigreydo">
       <div class="mx-auto flex gap-3 items-center justify-between w-full max-w-(--breakpoint-xl)">
         <Prompt />
-        <LanguageSwitch />
+        <div class="flex flex-row items-center">
+          {/* <BsTranslate /> */}
+          <LanguageSwitch lang={lang} />
+        </div>
       </div>
     </header>
   );
@@ -14,7 +23,8 @@ export default function Header() {
 function Prompt() {
   return (
     <div>
-      <span className="text-albedo">&gt; 
+      <span className="text-albedo">
+        &gt;
         <span class="animate-blink">_</span>
       </span>
       {/* Commands */}

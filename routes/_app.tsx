@@ -1,20 +1,19 @@
-import { PageProps } from "fresh";
-import { Head } from "fresh/runtime";
+import { define } from "../utils.ts";
 
-export default function App({ Component }: PageProps) {
+
+export default define.page(function App({
+  Component,
+  state,
+}) {
   return (
-    <html>
-      <Head>
+    <html lang={state.lang ?? "en"}>
+      <head>
         <meta charset="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
-        <title>~ whoami</title>
-      </Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body class="bg-nigredo text-citrinitas">
-        <Component />
+        <Component/>
       </body>
     </html>
   );
-}
+});

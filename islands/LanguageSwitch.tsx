@@ -1,62 +1,29 @@
-import { EN, FR, Lang } from "../utils/lang.ts";
-import { useContext } from "preact/hooks";
-import { TranslationContext } from "./TranslationContext.tsx";
+import { EN, FR, Lang } from "../utils.ts";
 
-import en from "../i18n/json/en.json" with { type: "json" };
-import fr from "../i18n/json/fr.json" with { type: "json" };
-import { Labels } from "../i18n/labels.ts";
-
-interface LangItemProps {
-  label: string;
-  active?: boolean;
-  onClick: () => void;
+interface Props {
+  lang: Lang;
 }
 
-export default function LanguageSwitch() {
-  const context = useContext(TranslationContext)!;
 
-  if (!context) {
-    throw new Error(
-      "TranslationContext must be used within a TranslationProvider",
-    );
+export default function LanguageSwitch({ lang }: Props) {
+  async function switchLang(newLang: Lang) {
+
+    await fetch("/api/lang", {
+      method: "POST",
+      body: JSON.stringify({ lang: newLang }),
+      headers: { "Content-Type": "application/json" }
+    });
+
+    location.reload();
   }
 
-  const { lang, setLang, setLabels } = context;
-
-  async function switchLang(newLang: Lang, labels: Labels) {
-    await fetch(`/api/lang?lang=${newLang}`, { method: "POST" });
-    setLabels(labels);
-    setLang(newLang);
-  }
-  
   return (
-    <div class="text-rubedo inline-flex items-center gap-1">
-      <LangItem
-        label={FR}
-        active={lang === FR}
-        onClick={() => switchLang(FR, fr)}
-      />
-      <span>|</span>
-      <LangItem
-        label={EN}
-        active={lang === EN}
-        onClick={() => switchLang(EN, en)}
-      />
-    </div>
-  );
-}
-
-function LangItem({ label, active, onClick }: LangItemProps) {
-  return (
-    <button
-      type="button"
-      aria-label={`to ${label}`}
-      onClick={onClick}
-      class={`${
-        active ? "text-citrinitas" : "text-nigredo hover:text-citrinitas"
-      } cursor-pointer`}
+    <select
+      value={lang}
+      onChange={(e) => switchLang(e.currentTarget.value as Lang)}
     >
-      {label}
-    </button>
+      <option value="fr">{FR}</option>
+      <option value="en">{EN}</option>
+    </select>
   );
 }

@@ -1,27 +1,20 @@
-import { PageProps } from "fresh";
-import Header from "../components/Header.tsx";
-import { TranslationState } from "./_middleware.ts";
-import { TranslationProvider } from "../islands/TranslationContext.tsx";
-import Hero from "../components/Hero.tsx";
+
 import { Experiences } from "../components/Experiences.tsx";
 import Footer from "../components/Footer.tsx";
+import Header from "../components/Header.tsx";
+import Hero from "../components/Hero.tsx";
+import { loadLabels } from "../i18n/labels.ts";
+import { define, Lang } from "../utils.ts";
 
-
-export default function Home(ctx: PageProps<unknown, TranslationState>) {
-  const labels = ctx.state.tValues;
-  const lang = ctx.state.lang.value;
+export default define.page(function Home(ctx) {
+  const labels = loadLabels(ctx.state.lang as Lang);
+  console.log("labels loaded", labels?.["hero.job.title"] ?? "not loaded")
   return (
     <>
-      <TranslationProvider
-        initLabels={labels}
-        initLang={lang}
-      >
-        <Header />
-        <Hero />
-        <Experiences />
-        <Footer />
-      </TranslationProvider>
+      <Header lang={ctx.state.lang} />
+      <Hero labels={labels} />
+      <Experiences labels={labels} />
+      <Footer labels={labels} />
     </>
-    
   );
-}
+});

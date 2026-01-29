@@ -13,3 +13,7 @@ node_modules/
 
 
 .DS_Store
+*.code-workspace
+
+# folder that contains releases artifacts
+_releases

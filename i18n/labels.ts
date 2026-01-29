@@ -1,6 +1,6 @@
-import { EN, FR, Lang } from "../utils/lang.ts";
-import en from "./json/en.json" with { type: "json" } ;
-import fr from "./json/fr.json" with { type: "json" };
+import { EN, FR, Lang } from "../utils.ts";
+import en from "../static/json/en.json" with { type: "json" };
+import fr from "../static/json/fr.json" with { type: "json" };
 
 export type Labels = typeof en | typeof fr;
 
@@ -10,10 +10,9 @@ function flattenLabels(
   obj: Record<string, string>,
   prefix = "",
 ): Record<string, string> {
-
   return Object.entries(obj).reduce((acc, [key, value]) => {
     const path = prefix ? `${prefix}.${key}` : key;
-    
+
     if (typeof value === "object" && value !== null) {
       Object.assign(acc, flattenLabels(value, path));
     } else {
@@ -26,12 +25,12 @@ function flattenLabels(
 const flattenedFr = flattenLabels(fr as unknown as Record<string, string>);
 const flattenedEn = flattenLabels(en as unknown as Record<string, string>);
 
-const LABELS = new Map<Lang, Record<string, string>>([
+export const LABELS = new Map<Lang, Record<string, string>>([
   [FR, flattenedFr],
   [EN, flattenedEn],
 ]);
 
-
-export function translate(labelKey: string, lang: Lang): string {
-  return LABELS.get(lang)![labelKey];
+export function loadLabels(lang: Lang): Record<string, string> {
+  const safeLang = lang ?? "en";
+  return LABELS.get(safeLang) ?? flattenedEn;
 }

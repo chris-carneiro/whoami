@@ -1,39 +1,62 @@
-import { asset } from "fresh/runtime";
-import I18nText from "../islands/I18nText.tsx";
+import I18nLabel from "./I18nLabel.tsx";
+import { ExternalLink } from "./ExternalLink.tsx";
 
-export default function Hero() {
+// Fix Cumulative Layout shift by giving container div a min height
+
+export interface HeroProps {
+  labels?: Record<string, string>;
+}
+
+export default function Hero(props: HeroProps) {
+  const heroTitle = props?.labels?.["hero.job.title"] ?? "hero.job.title"; // keep the labelKey as straightfoward fallback.
+  const heroIntro = props?.labels?.["hero.intro"] ?? "hero.intro"; // keep the labelKey as straightfoward fallback.
+
   return (
-    <>
-      <div class="min-h-screen min-w-0 w-full bg-nigredo flex items-center justify-center">
-        <div class="flex flex-col items-center gap-2">
-          <div class="relative flex flex-col sm:inline-block py-8 sm:py-16">
-            <div class="relative flex min-w-0 flex-col items-center sm:items-start sm:text-left sm:inline-block">
-              <img
-                src={asset("avatar.jpg")}
-                class="mb-4 rounded-full pointer-events-none sm:mb-0 sm:h-40 sm:w-40 sm:absolute sm:-top-36 sm:right-0 sm:translate-x-1/2"
-              />
-              <h1 class="relative text-center z-10 text-xl sm:text-5xl my-1.5 font-bold">
-                Firstname Lastname{" "}
-                <span class="text-rubedo animate-pulse">.</span>
-              </h1>
-              <h2 class="relative text-xl sm:text-3xl font-semibold">
-                <I18nText labelKey="hero.job.title" />
-              </h2>
-            </div>
-          </div>
-          <div class="relative flex flex-col sm:inline-block">
-            <section class="w-full min-w-0 mx-auto px-8 sm:px-16 md:px-20 flex flex-col gap-8 sm:gap-16 justify-self-auto">
-              <div class="relative flex flex-col items-center gap-y-5 
-            min-h-96 md:min-h-60 lg:min-h-48">
-                <I18nText
-                  labelKey="hero.intro"
-                  style="text-justify sm:text-xl leading-relaxed text-albedo"
+    <section class="min-h-screen bg-nigredo flex items-center">
+      <div class="mx-auto w-full max-w-6xl px-[clamp(1.5rem,4vw,3rem)] flex flex-col justify-between">
+        <div class="flex flex-col gap-12">
+          <div class="flex min-h-28 md:min-h-24">
+            <header>
+              <div class="text-xl sm:text-3xl md:text-4xl font-bold">
+                Chris Carneiro<span class="text-rubedo">.</span>
+              </div>
+
+              <div class="min-h-10">
+                <I18nLabel
+                  label={heroTitle}
+                  style="text-xl md:text-3xl font-semibold my-4"
                 />
               </div>
-            </section>
+            </header>
+          </div>
+
+          <div class="min-h-60dvh sm:min-h-72">
+            <I18nLabel
+              label={heroIntro}
+              style="text-justify md:text-xl leading-relaxed text-albedo"
+            />
+          </div>
+
+          <div class="flex justify-end">
+            <footer class="flex gap-4">
+              <ExternalLink
+                href="https://github.com/chris-carneiro"
+                aria-label="GitHub"
+              >
+                <img src="/github.png" alt="LinkedIn" class="h-8 w-auto" />
+
+              </ExternalLink>
+
+              <ExternalLink
+                href="https://www.linkedin.com/in/chriscarneiro/"
+                aria-label="LinkedIn"
+              >
+                <img src="/linkedin-white.png" alt="LinkedIn" class="h-8 w-auto" />
+              </ExternalLink>
+            </footer>
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
