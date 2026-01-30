@@ -1,9 +1,5 @@
 import { EN, FR, Lang } from "../utils/lang.ts";
 
-
-import en from "../i18n/json/en.json" with { type: "json" };
-import fr from "../i18n/json/fr.json" with { type: "json" };
-import { Labels } from "../i18n/labels.ts";
 import { useTranslation } from "./TranslationContext.tsx";
 
 interface LangItemProps {
@@ -13,11 +9,10 @@ interface LangItemProps {
 }
 
 export default function LanguageSwitch() {
-    const { lang, setLang, setLabels } = useTranslation();
+    const { lang, setLang } = useTranslation();
 
-  async function switchLang(newLang: Lang, labels: Labels) {
+  async function switchLang(newLang: Lang) {
     await fetch(`/api/lang?lang=${newLang}`, { method: "POST" });
-    setLabels(labels);
     setLang(newLang);
   }
   
@@ -26,13 +21,13 @@ export default function LanguageSwitch() {
       <LangItem
         label={FR}
         active={lang === FR}
-        onClick={() => switchLang(FR, fr)}
+        onClick={() => switchLang(FR)}
       />
       <span>|</span>
       <LangItem
         label={EN}
         active={lang === EN}
-        onClick={() => switchLang(EN, en)}
+        onClick={() => switchLang(EN)}
       />
     </div>
   );
