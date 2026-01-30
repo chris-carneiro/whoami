@@ -1,13 +1,14 @@
-import { BsGithub } from "@preact-icons/bs";
+import { BsTranslate } from "@preact-icons/bs";
 import LanguageSwitch from "../islands/LanguageSwitch.tsx";
-import { ExternalLink } from "./ExternalLink.tsx";
+
 
 export default function Header() {
   return (
-    <header class="sticky top-0 z-10 px-4 py-2 max-w-full text-left text-citrinitas bg-nigreydo">
+    <header class="sticky top-0 z-10 px-4 max-w-full text-left text-albedo bg-nigreydo">
       <div class="mx-auto flex gap-3 items-center justify-between w-full max-w-(--breakpoint-xl)">
         <Prompt />
-        <div class="gap-4 inline-flex bottom-0">
+        <div class="flex flex-row items-center">
+          <BsTranslate />
           <LanguageSwitch />
         </div>
       </div>

@@ -1,4 +1,5 @@
 import I18nText from "../islands/I18nText.tsx";
+
 import { ExternalLink } from "./ExternalLink.tsx";
 
 export default function Footer() {
@@ -52,21 +53,6 @@ export default function Footer() {
             />
           </ExternalLink>
         </div>
-
-        {/* <div class="flex flex-row-reverse w-full px-2">
-          <ExternalLink
-            href="https://fresh.deno.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              width="147"
-              height="37"
-              src="https://fresh.deno.dev/fresh-badge-dark.svg"
-              alt="Made with Fresh"
-            />
-          </ExternalLink>
-        </div> */}
       </div>
     </footer>
   );
