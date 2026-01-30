@@ -1,5 +1,7 @@
 import { asset } from "fresh/runtime";
 import I18nText from "../islands/I18nText.tsx";
+import { BsGithub, BsLinkedin } from "@preact-icons/bs";
+import { ExternalLink } from "./ExternalLink.tsx";
 
 export default function Hero() {
   return (
@@ -31,6 +33,22 @@ export default function Hero() {
                 />
               </div>
             </section>
+            <div class="flex flex-row-reverse gap-4 w-full p-8 sm:p-16 md:p-20">
+              <ExternalLink
+                href="https://github.com/chris-carneiro"
+                aria-label="GitHub profile"
+                className="inline-flex items-center"
+              >
+                <BsGithub size={32} />
+              </ExternalLink>
+              <ExternalLink
+                href="https://www.linkedin.com/in/chriscarneiro/"
+                aria-label="Linkedin profile"
+                className="inline-flex items-center"
+              >
+                <BsLinkedin size={32} />
+              </ExternalLink>
+            </div>
           </div>
         </div>
       </div>
