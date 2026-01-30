@@ -1,6 +1,7 @@
 import { PageProps } from "fresh";
 import { Head } from "fresh/runtime";
 
+
 export default function App({ Component }: PageProps) {
   return (
     <html>

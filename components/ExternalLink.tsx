@@ -6,6 +6,7 @@ export function ExternalLink(props: ComponentProps<"a">) {
       {...props}
       target="_blank"
       rel="noopener noreferrer"
+      className="hover:text-citrinitas text-albedo"
     />
   );
 }

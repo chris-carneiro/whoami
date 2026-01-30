@@ -52,5 +52,8 @@
       "details": "Capgemini Télécom Média Défense - Alternance/Temps plein - Grenoble - Jui 2010 à Oct 2011",
       "description": "J'ai optimisé de façon drastique un outil de traitements de données écrit en PL/SQL pour Orange (gain de 95% sur le temps d'exécution initial). <br> J'ai contribué à l'implémentation d'un service de détection de plages IP disponibles pour France Telecom (Java, WebLogic, XML)."
     }
+  },
+  "footer": {
+    "hireme": "Disponible sur"
   }
 }

@@ -1,10 +1,10 @@
-import { useContext, useMemo } from "preact/hooks";
-import { TranslationContext } from "./TranslationContext.tsx";
 import { translate } from "../i18n/labels.ts";
 import { marked } from "marked";
+import { useTranslation } from "./TranslationContext.tsx";
+import { useMemo } from "preact/hooks";
 
 export default function I18nText(props: I18nProps) {
-  const { lang } = useContext(TranslationContext)!;
+  const { lang } = useTranslation()!;
  
   const html = useMemo(() => {
     const content = translate(props.labelKey, lang) ?? "";

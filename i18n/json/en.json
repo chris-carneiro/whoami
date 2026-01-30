@@ -28,7 +28,7 @@
       "description": "I designed and released an open-source Android application for automatic Wi-Fi management. [Wi-Fi-Toggler - GitHub](https://github.com/chris-carneiro/Wi-Fi-Toggler)"
     },
     "laroueverte": {  
-      "jobtitle": "font-semibold text-3xl mb-1.5 text-rubedo",
+      "jobtitle": "Freelance Software Engineer",
       "details": "LaRoueVerte.com - Contract - Grenoble, France - Mar 2015 to Mar 2015",
       "description": "First Client: LaRoueVerte.com<br> Feasability study and prototyping of a carpooling Android application. (The content is under NDA)"
     },
@@ -52,5 +52,8 @@
       "details": "Capgemini Télécom Média Défense - Apprenticeship / Full time - Grenoble, France - Jul 2010 à Oct 2011",
       "description": "I drastically optimized a data processing tool written in PL/SQL for Orange (95% reduction in execution time). I also contributed to the implementation of a service for detecting available IP address ranges for France Telecom (Java, WebLogic, XML)."
     }
+  },
+  "footer": {
+    "hireme" : "Hire me via"
   }
 }
