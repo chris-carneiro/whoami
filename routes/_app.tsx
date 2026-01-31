@@ -11,7 +11,7 @@ export default function App({ Component }: PageProps) {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         />
-        <title>~ whoami</title>
+        <title>&gt;_ </title>
       </Head>
       <body class="bg-nigredo text-citrinitas">
         <Component />

@@ -10,7 +10,7 @@ export default function Footer() {
           <I18nText labelKey="footer.hireme" style="text-citrinitas font-bold animate-pulse"/>
           <div class="flex">
             <ExternalLink
-              href="https://www.malt.fr/profile/christophecarneiro"
+              href="/malt"
               aria-label="Malt profile"
               
             >
@@ -26,7 +26,7 @@ export default function Footer() {
 
         <div class="flex gap-8">
           <ExternalLink
-            href="https://github.com/chris-carneiro/whoami"
+            href="/whoami"
             class="text-foreground-secondary hover:underline"
           >
             Source
