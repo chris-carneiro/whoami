@@ -1,6 +1,6 @@
 import { createDefine } from "fresh";
-import { signal, Signal } from "@preact/signals";
 import { Lang } from "./lang.ts";
+import { Signal } from "@preact/signals";
 
 
 export interface TranslationState {

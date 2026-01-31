@@ -6,7 +6,7 @@ import { currentLang } from "../i18n/labels.ts";
 
 
 export default function App(
-  { Component, state }: PageProps<unknown, TranslationState>,
+  { Component }: PageProps<unknown, TranslationState>,
 ) {
   return (
     <html lang={currentLang.value}>

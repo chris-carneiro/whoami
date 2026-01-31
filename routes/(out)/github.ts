@@ -1,7 +1,5 @@
 import { define } from "../../utils/global.ts";
 
-
-
 export const handler = define.handlers({
   GET(ctx) {
     return new Response(ctx.state.lang.value, {
@@ -12,5 +10,3 @@ export const handler = define.handlers({
     });
   },
 });
-
-
