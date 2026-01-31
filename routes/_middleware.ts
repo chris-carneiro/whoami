@@ -1,25 +1,18 @@
-import { Context } from "fresh";
 import { getCookies } from "$std/http/cookie.ts";
-import { Labels } from "../i18n/labels.ts";
 import { FR, Lang } from "../utils/lang.ts";
-import { Signal, signal } from "@preact/signals";
+import { define } from "../utils/global.ts";
+import { signal } from "@preact/signals";
+import { currentLang } from "../i18n/labels.ts";
 
 // TODO rework label import.
-import en from "../i18n/json/en.json" with { type: "json" };
-import fr from "../i18n/json/fr.json" with { type: "json" };
 
-export interface TranslationState {
-  lang: Signal<Lang>;
-  tValues: Labels;
-}
-
-export async function handler(ctx: Context<TranslationState>) {
+export default define.middleware(async (ctx) => {
   const req = ctx.req;
   const cookies = getCookies(req.headers);
-  const currentLang = (cookies.lang as Lang) ?? FR;
+  const langCookie = (cookies.lang as Lang) ?? FR;
 
-  ctx.state.lang = signal(currentLang);
-  ctx.state.tValues = currentLang === FR ? fr : en;
+  currentLang.value = langCookie;
+  ctx.state.lang = signal(langCookie);
 
   return await ctx.next();
-}
+});

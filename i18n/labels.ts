@@ -1,19 +1,22 @@
+import { signal } from "@preact/signals";
 import { EN, FR, Lang } from "../utils/lang.ts";
-import en from "./json/en.json" with { type: "json" } ;
+
+import en from "./json/en.json" with { type: "json" };
 import fr from "./json/fr.json" with { type: "json" };
 
 export type Labels = typeof en | typeof fr;
 
 const _check: Labels = en || fr;
 
+export const currentLang = signal<Lang>(EN);
+
 function flattenLabels(
   obj: Record<string, string>,
   prefix = "",
 ): Record<string, string> {
-
   return Object.entries(obj).reduce((acc, [key, value]) => {
     const path = prefix ? `${prefix}.${key}` : key;
-    
+
     if (typeof value === "object" && value !== null) {
       Object.assign(acc, flattenLabels(value, path));
     } else {
@@ -31,7 +34,8 @@ const LABELS = new Map<Lang, Record<string, string>>([
   [EN, flattenedEn],
 ]);
 
-
 export function translate(labelKey: string, lang: Lang): string {
-  return LABELS.get(lang)![labelKey];
+  return LABELS.get(lang)! !== undefined
+    ? LABELS.get(lang)![labelKey]
+    : "Maintenance In progress";
 }

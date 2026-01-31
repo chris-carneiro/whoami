@@ -9,7 +9,7 @@ export function Experiences() {
         </h1>
         <Experience name="chanel" />
         <Experience name="kayentis" />
-        <Experience name="open"/>
+        <Experience name="open" />
         <Experience name="wifitoggler" />
         <Experience name="laroueverte" />
         <Experience name="astek" />

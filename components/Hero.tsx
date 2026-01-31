@@ -27,8 +27,7 @@ export default function Hero() {
             <section class="w-full min-w-0 mx-auto px-8 sm:px-16 md:px-20 flex flex-col gap-8 sm:gap-16 justify-self-auto">
               <div class="relative flex flex-col items-center gap-y-5 
             min-h-96 md:min-h-60 lg:min-h-48">
-                <I18nText
-                  labelKey="hero.intro"
+                <I18nText labelKey="hero.intro"
                   style="text-justify md:text-xl sm:text-lg leading-relaxed text-albedo"
                 />
               </div>

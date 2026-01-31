@@ -1,7 +1,6 @@
 import { BsTranslate } from "@preact-icons/bs";
 import LanguageSwitch from "../islands/LanguageSwitch.tsx";
 
-
 export default function Header() {
   return (
     <header class="sticky top-0 z-10 px-4 max-w-full text-left text-albedo bg-nigreydo">

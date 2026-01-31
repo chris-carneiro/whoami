@@ -1,4 +1,6 @@
 import { setCookie } from "$std/http/cookie.ts";
+
+
 import { EN } from "../../utils/lang.ts";
 
 export const handler = (req: Request): Response => {
@@ -17,6 +19,5 @@ export const handler = (req: Request): Response => {
     sameSite: "Lax",
     maxAge: 60 * 60 * 24 * 30,
   });
-
   return resp;
 };

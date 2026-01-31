@@ -1,8 +1,12 @@
 import { createDefine } from "fresh";
+import { signal, Signal } from "@preact/signals";
+import { Lang } from "./lang.ts";
 
 
-export interface State {
-  shared: string;
+export interface TranslationState {
+  lang: Signal<Lang>;
 }
 
-export const define = createDefine<State>();
+export const define = createDefine<TranslationState>();
+
+
