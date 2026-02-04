@@ -10,6 +10,7 @@ const _check: Labels = en || fr;
 
 export const currentLang = signal<Lang>(EN);
 
+
 function flattenLabels(
   obj: Record<string, string>,
   prefix = "",
@@ -29,13 +30,7 @@ function flattenLabels(
 const flattenedFr = flattenLabels(fr as unknown as Record<string, string>);
 const flattenedEn = flattenLabels(en as unknown as Record<string, string>);
 
-const LABELS = new Map<Lang, Record<string, string>>([
+export const LABELS = new Map<Lang, Record<string, string>>([
   [FR, flattenedFr],
   [EN, flattenedEn],
 ]);
-
-export function translate(labelKey: string, lang: Lang): string {
-  return LABELS.get(lang)! !== undefined
-    ? LABELS.get(lang)![labelKey]
-    : "Maintenance In progress";
-}

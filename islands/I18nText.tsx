@@ -1,29 +1,44 @@
-import { currentLang, translate } from "../i18n/labels.ts";
 import { marked } from "marked";
 
-import { Lang } from "../utils/lang.ts";
-import { useMemo } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 export default function I18nText({ labelKey, style }: I18nProps) {
-  const html = useMemo(() => {
-    const content = translate(labelKey, currentLang.value as Lang) ?? "";
-    return marked.parse(content, { async: false }) as string;
-  }, [labelKey, currentLang.value]);
+  const [html, setHtml] = useState<string>("");
+
+  useEffect(() => {
+    async function load() {
+      const label = await getLabel(labelKey);
+      setHtml(marked.parse(label, { async: false }) as string);
+    }
+    load();
+  }, []);
 
   return (
-    <div
-      key={currentLang.value as Lang} // if we need to restart animation based on more than 1 variable => `${lang}:${labelKey}`
-      class={`animate-fade-in transition-opacity 
+    <>
+      <div
+        key={`${labelKey}`}
+        class={html
+          ? `animate-fade-in transition-opacity 
         [&_a]:text-citrinitas
         [&_a]:underline 
         [&_a:hover]:text-albedo
-        ${style ?? ""}`}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+        ${style ?? ""}`
+          : `animate-pulse`}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </>
   );
 }
 
 export interface I18nProps {
   labelKey: string;
   style?: string;
+}
+
+async function getLabel(labelKey: string): Promise<string> {
+  const response = await fetch(`/api/lang/label?labelkey=${labelKey}`, {
+    credentials: "include", // ensures cookies are sent
+  });
+
+  return await response.json();
 }

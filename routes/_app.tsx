@@ -1,15 +1,13 @@
 import { PageProps } from "fresh";
 import { Head } from "fresh/runtime";
 import { TranslationState } from "../utils/global.ts";
-import { currentLang } from "../i18n/labels.ts";
-
 
 
 export default function App(
-  { Component }: PageProps<unknown, TranslationState>,
+  { Component, state }: PageProps<unknown, TranslationState>,
 ) {
   return (
-    <html lang={currentLang.value}>
+    <html lang={state.lang}>
       <Head>
         <meta charset="utf-8" />
         <meta

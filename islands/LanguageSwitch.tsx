@@ -1,23 +1,32 @@
+
 import { EN, FR, Lang } from "../utils/lang.ts";
-import { currentLang } from "../i18n/labels.ts";
 
-export default function LanguageSwitch() {
 
+interface Props {
+  lang: Lang;
+}
+
+
+export default function LanguageSwitch({ lang }: Props) {
   async function switchLang(newLang: Lang) {
-    currentLang.value = newLang;
-    await fetch(`/api/lang?lang=${newLang}`, { method: "POST" });
+
+    await fetch("/api/lang", {
+      method: "POST",
+      body: JSON.stringify({ lang: newLang }),
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    });
+
+    location.reload();
   }
 
   return (
     <select
-      class="appearance-none bg-transparent p-2 rounded"
-      value={currentLang.value}
-      onChange={(e) => {
-        switchLang(e.currentTarget.value as Lang);
-      }}
+      value={lang}
+      onChange={(e) => switchLang(e.currentTarget.value as Lang)}
     >
-      <option value="fr">{`${FR}`}</option>
-      <option value="en">{`${EN}`}</option>
+      <option value="fr">{FR}</option>
+      <option value="en">{EN}</option>
     </select>
   );
 }

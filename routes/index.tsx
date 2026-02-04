@@ -4,14 +4,15 @@ import Footer from "../components/Footer.tsx";
 import Header from "../components/Header.tsx";
 import Hero from "../components/Hero.tsx";
 import { TranslationState } from "../utils/global.ts";
-import InitLocale from "../islands/InitLocale.tsx";
 
 
 export default function Home(ctx: PageProps<unknown, TranslationState>) {
+  
+  // currentLang.value = ctx.state.lang;
+
   return (
     <>
-      <InitLocale />
-      <Header />
+      <Header lang={ctx.state.lang} />
       <Hero />
       <Experiences />
       <Footer />

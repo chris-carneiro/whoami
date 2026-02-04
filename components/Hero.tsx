@@ -3,7 +3,9 @@ import I18nText from "../islands/I18nText.tsx";
 import { BsGithub, BsLinkedin } from "@preact-icons/bs";
 import { ExternalLink } from "./ExternalLink.tsx";
 
+
 export default function Hero() {
+
   return (
     <>
       <div class="min-h-screen min-w-0 w-full bg-nigredo flex items-center justify-center my-4">
