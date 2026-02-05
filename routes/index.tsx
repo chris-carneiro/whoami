@@ -7,8 +7,6 @@ import { TranslationState } from "../utils/global.ts";
 
 
 export default function Home(ctx: PageProps<unknown, TranslationState>) {
-  
-  // currentLang.value = ctx.state.lang;
 
   return (
     <>
