@@ -13,8 +13,7 @@ export default function LanguageSwitch({ lang }: Props) {
     await fetch("/api/lang", {
       method: "POST",
       body: JSON.stringify({ lang: newLang }),
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
+      headers: { "Content-Type": "application/json" }
     });
 
     location.reload();

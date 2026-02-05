@@ -1,10 +1,10 @@
 import { PageProps } from "fresh";
 import { Head } from "fresh/runtime";
-import { TranslationState } from "../utils/global.ts";
+import { State } from "../utils/global.ts";
 
 
 export default function App(
-  { Component, state }: PageProps<unknown, TranslationState>,
+  { Component, state }: PageProps<unknown, State>,
 ) {
   return (
     <html lang={state.lang}>

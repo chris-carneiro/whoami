@@ -7,13 +7,13 @@ export default function Footer() {
     <footer class="sm:sticky bottom-0 bg-nigreydo">
       <div class="flex flex-col sm:flex-row gap-4 py-2 justify-between items-center max-w-(--breakpoint-xl) mx-auto w-full sm:px-6 md:px-8 text-base">
         <div class="flex flex-row items-center gap-1.5">
-          <I18nText labelKey="footer.hireme" style="text-citrinitas font-bold animate-pulse" />
+          <I18nText
+            labelKey="footer.hireme"
+            style="text-citrinitas font-bold animate-pulse"
+          />
+
           <div class="flex">
-            <ExternalLink
-              href="/malt"
-              aria-label="Malt profile"
-              
-            >
+            <ExternalLink href="/malt" aria-label="Malt profile">
               <img
                 src="/malt_logo.svg"
                 alt="The malt.com freelancer platform pink logo"
@@ -25,26 +25,15 @@ export default function Footer() {
         </div>
 
         <div class="flex gap-8">
-          <ExternalLink
-            href="/whoami"
-            class="text-foreground-secondary hover:underline"
-          >
+          <ExternalLink href="/whoami">
             Source
           </ExternalLink>
-          <ExternalLink
-            href="https://mit-license.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-foreground-secondary hover:underline"
-          >
+
+          <ExternalLink href="https://mit-license.org ">
             License
           </ExternalLink>
 
-          <ExternalLink
-            href="https://fresh.deno.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <ExternalLink href="https://fresh.deno.dev">
             <img
               width="147"
               height="37"

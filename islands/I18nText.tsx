@@ -19,9 +19,6 @@ export default function I18nText({ labelKey, style }: I18nProps) {
         key={`${labelKey}`}
         class={html
           ? `animate-fade-in transition-opacity 
-        [&_a]:text-citrinitas
-        [&_a]:underline 
-        [&_a:hover]:text-albedo
         ${style ?? ""}`
           : `animate-pulse`}
         dangerouslySetInnerHTML={{ __html: html }}
@@ -36,9 +33,7 @@ export interface I18nProps {
 }
 
 async function getLabel(labelKey: string): Promise<string> {
-  const response = await fetch(`/api/lang/label?labelkey=${labelKey}`, {
-    credentials: "include", // ensures cookies are sent
-  });
+  const response = await fetch(`/api/lang/label?labelkey=${labelKey}`);
 
   return await response.json();
 }

@@ -1,10 +1,10 @@
 import { createDefine } from "fresh";
 import { Lang } from "./lang.ts";
 
-export interface TranslationState {
+export interface State {
   lang: Lang;
 }
 
-export const define = createDefine<TranslationState>();
+export const define = createDefine<State>();
 
 

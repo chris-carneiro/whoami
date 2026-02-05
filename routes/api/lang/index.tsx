@@ -5,8 +5,7 @@ import { define } from "../../../utils/global.ts";
 export const handler = define.handlers({
   async POST(ctx) {
     try {
-      const data = await ctx.req.json(); // JSON body sent by fetch
-      console.log("ctx.req", data);
+      const data = await ctx.req.json();
       const lang = data.lang ?? EN;
 
       const resp = new Response(null, { status: 204 });
@@ -15,7 +14,7 @@ export const handler = define.handlers({
         value: lang,
         path: "/",
         httpOnly: false,
-        sameSite: "Lax",
+        sameSite: "Lax", // remove this if it turns out the request isn't considered same-origin see https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#including_credentials
         maxAge: 60 * 60 * 24 * 30,
       });
 

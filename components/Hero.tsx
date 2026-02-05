@@ -3,9 +3,7 @@ import I18nText from "../islands/I18nText.tsx";
 import { BsGithub, BsLinkedin } from "@preact-icons/bs";
 import { ExternalLink } from "./ExternalLink.tsx";
 
-
 export default function Hero() {
-
   return (
     <>
       <div class="min-h-screen min-w-0 w-full bg-nigredo flex items-center justify-center my-4">
@@ -29,7 +27,8 @@ export default function Hero() {
             <section class="w-full min-w-0 mx-auto px-8 sm:px-16 md:px-20 flex flex-col gap-8 sm:gap-16 justify-self-auto">
               <div class="relative flex flex-col items-center gap-y-5 
             min-h-96 md:min-h-60 lg:min-h-48">
-                <I18nText labelKey="hero.intro"
+                <I18nText
+                  labelKey="hero.intro"
                   style="text-justify md:text-xl sm:text-lg leading-relaxed text-albedo"
                 />
               </div>
@@ -42,6 +41,7 @@ export default function Hero() {
               >
                 <BsGithub size={32} />
               </ExternalLink>
+
               <ExternalLink
                 href="/linkedin"
                 aria-label="Linkedin profile"

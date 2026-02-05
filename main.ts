@@ -1,9 +1,9 @@
 
 import { App, staticFiles } from "fresh";
-import { TranslationState } from "./utils/global.ts";
+import { State } from "./utils/global.ts";
 
 
-export const app = new App<TranslationState>()
+export const app = new App<State>()
   .use(staticFiles())
   // Enable file-system based routing
   .fsRoutes();
