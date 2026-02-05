@@ -8,9 +8,6 @@ export type Labels = typeof en | typeof fr;
 
 const _check: Labels = en || fr;
 
-export const currentLang = signal<Lang>(EN);
-
-
 function flattenLabels(
   obj: Record<string, string>,
   prefix = "",
