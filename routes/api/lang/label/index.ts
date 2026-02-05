@@ -10,7 +10,7 @@ export const handler = define.handlers({
     const lang = cookies.lang as Lang ?? EN;
 
     const url = new URL(ctx.req.url);
-    const labelKey = url.searchParams.get("labelkey") ?? "notfound";
+    const labelKey = url.searchParams.get("labelkey") ?? "";
 
     const label = LABELS.get(lang)?.[labelKey] ?? labelKey;
 
