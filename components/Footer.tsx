@@ -11,7 +11,6 @@ export default function Footer() {
             <I18nText
               labelKey="footer.hireme"
               style="text-citrinitas font-bold animate-pulse"
-              skeletonProps={{ style: "display:none" }}
             />
           </div>
           <div class="min-h-8 flex items-center">

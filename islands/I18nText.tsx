@@ -1,36 +1,35 @@
-import { marked } from "marked";
-
-import { useEffect, useState } from "preact/hooks";
 
 export default function I18nText(props: I18nProps) {
-  const [html, setHtml] = useState<string>("");
+
+  const html = false;
   const MIN_SKELETON_MS = 700;
 
   const { lines: skeletonLines = 1, style: skeletonStyle = "" } =
     props.skeletonProps ?? {};
 
-  useEffect(() => {
-    let mounted = true;
+  // useEffect(() => {
+  //   if (!IS_BROWSER) return;
+  //   let mounted = true;
 
-    async function load() {
-      const start = performance.now();
+  //   async function load() {
+  //     // const start = performance.now();
 
-      const label = await getLabel(props.labelKey);
-      const parsed = marked.parse(label, { async: false }) as string;
+  //     const label = await getLabel(props.labelKey);
+  //     const parsed = marked.parse(label, { async: false }) as string;
 
-      const elapsed = performance.now() - start;
-      const remaining = Math.max(0, MIN_SKELETON_MS - elapsed);
+  //     // const elapsed = performance.now() - start;
+  //     const remaining = Math.max(0, MIN_SKELETON_MS - 200);
 
-      setTimeout(() => {
-        if (mounted) setHtml(parsed);
-      }, remaining);
-    }
+  //     setTimeout(() => {
+  //       if (mounted) setHtml(parsed);
+  //     }, remaining);
+  //   }
 
-    load();
-    return () => {
-      mounted = false;
-    };
-  }, [props.labelKey]);
+  //   load();
+  //   return () => {
+  //     mounted = false;
+  //   };
+  // }, [props.labelKey]);
 
   return html
     ? (

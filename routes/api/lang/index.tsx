@@ -14,7 +14,7 @@ export const handler = define.handlers({
         value: lang,
         path: "/",
         httpOnly: false,
-        sameSite: "Lax", // remove this if it turns out the request isn't considered same-origin see https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#including_credentials
+        // sameSite: "Lax", // remove this if it turns out the request isn't considered same-origin see https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#including_credentials
         maxAge: 60 * 60 * 24 * 30,
       });
 

@@ -1,4 +1,3 @@
-import { signal } from "@preact/signals";
 import { EN, FR, Lang } from "../utils/lang.ts";
 
 import en from "./json/en.json" with { type: "json" };
