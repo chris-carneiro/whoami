@@ -4,15 +4,17 @@ import { ExternalLink } from "./ExternalLink.tsx";
 
 export default function Footer() {
   return (
-    <footer class="sm:sticky bottom-0 bg-nigreydo">
-      <div class="h-8 flex flex-col sm:flex-row gap-4 py-2 justify-between items-center max-w-(--breakpoint-xl) mx-auto w-full sm:px-6 md:px-8 text-base">
+    <footer class="sm:sticky bottom-0 bg-nigreydo min-h-9">
+      <div class="flex flex-col sm:flex-row gap-4 justify-between items-center max-w-(--breakpoint-xl) mx-auto w-full sm:px-6 md:px-8 text-base">
         <div class="flex flex-row items-center gap-1.5">
-          <I18nText
-            labelKey="footer.hireme"
-            style="min-w-2 text-citrinitas font-bold animate-pulse"
-          />
-
-          <div class="flex">
+          <div class="min-w-32 min-h-8 flex items-center">
+            <I18nText
+              labelKey="footer.hireme"
+              style="text-citrinitas font-bold animate-pulse"
+              skeletonProps={{ style: "display:none" }}
+            />
+          </div>
+          <div class="min-h-8 flex items-center">
             <ExternalLink href="/malt" aria-label="Malt profile">
               <img
                 src="/malt_logo.svg"
@@ -24,23 +26,25 @@ export default function Footer() {
           </div>
         </div>
 
-        <div class="flex gap-8">
+        <div class="flex items-center gap-8 min-h-8">
           <ExternalLink href="/whoami">
             Source
           </ExternalLink>
 
-          <ExternalLink href="https://mit-license.org ">
+          <ExternalLink href="https://mit-license.org">
             License
           </ExternalLink>
 
-          <ExternalLink href="https://fresh.deno.dev">
-            <img
-              width="147"
-              height="37"
-              src="https://fresh.deno.dev/fresh-badge-dark.svg"
-              alt="Made with Fresh"
-            />
-          </ExternalLink>
+          <div class="min-w-40 flex items-center">
+            <ExternalLink href="https://fresh.deno.dev">
+              <img
+                width="147"
+                height="37"
+                src="https://fresh.deno.dev/fresh-badge-dark.svg"
+                alt="Made with Fresh"
+              />
+            </ExternalLink>
+          </div>
         </div>
       </div>
     </footer>
