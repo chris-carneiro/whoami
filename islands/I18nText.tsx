@@ -1,31 +1,35 @@
+import { IS_BROWSER } from "fresh/runtime";
+import { marked } from "marked";
+
+import { useState } from "preact/hooks";
 
 export default function I18nText(props: I18nProps) {
 
-  const html = false;
+  const [html, setHtml] = useState<string>("");
   const MIN_SKELETON_MS = 700;
 
   const { lines: skeletonLines = 1, style: skeletonStyle = "" } =
     props.skeletonProps ?? {};
 
   // useEffect(() => {
-  //   if (!IS_BROWSER) return;
+    if (!IS_BROWSER) return;
   //   let mounted = true;
 
-  //   async function load() {
+    async function load() {
   //     // const start = performance.now();
 
-  //     const label = await getLabel(props.labelKey);
-  //     const parsed = marked.parse(label, { async: false }) as string;
-
+      const label = await getLabel(props.labelKey);
+      const parsed = marked.parse(label, { async: false }) as string;
+      setHtml(parsed);
   //     // const elapsed = performance.now() - start;
   //     const remaining = Math.max(0, MIN_SKELETON_MS - 200);
 
   //     setTimeout(() => {
   //       if (mounted) setHtml(parsed);
   //     }, remaining);
-  //   }
+    }
 
-  //   load();
+    load();
   //   return () => {
   //     mounted = false;
   //   };
