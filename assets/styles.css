@@ -10,6 +10,8 @@
   --color-text: var(--color-text);
   --color-primary: var(--color-primary);
 
+  --spacing-60dvh: 60dvh;
+
   --animate-bounce: bounce 1s infinite;
   --animate-bounce-low: bounce-low 2s;
   --animate-bounce-high: bounce-high 1s infinite;

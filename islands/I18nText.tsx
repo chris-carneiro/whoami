@@ -2,17 +2,12 @@ import { marked } from "marked";
 
 import { useEffect, useState } from "preact/hooks";
 
-export default function I18nText({ labelKey, style, skeletonLines }: I18nProps) {
+export default function I18nText(props: I18nProps) {
   const [html, setHtml] = useState<string>("");
+  const MIN_SKELETON_MS = 700;
 
-  // useEffect(() => {
-  //   async function load() {
-  //     const label = await getLabel(labelKey);
-  //     setHtml(marked.parse(label, { async: false }) as string);
-  //   }
-  //   load();
-  // }, []);
-  const MIN_SKELETON_MS = 600;
+  const { lines: skeletonLines = 1, style: skeletonStyle = "" } =
+    props.skeletonProps ?? {};
 
   useEffect(() => {
     let mounted = true;
@@ -20,7 +15,7 @@ export default function I18nText({ labelKey, style, skeletonLines }: I18nProps) 
     async function load() {
       const start = performance.now();
 
-      const label = await getLabel(labelKey);
+      const label = await getLabel(props.labelKey);
       const parsed = marked.parse(label, { async: false }) as string;
 
       const elapsed = performance.now() - start;
@@ -35,35 +30,31 @@ export default function I18nText({ labelKey, style, skeletonLines }: I18nProps) 
     return () => {
       mounted = false;
     };
-  }, [labelKey]);
+  }, [props.labelKey]);
 
-  return (
-    html
-      ? (
-        <>
-          <div
-            class={html
-              ? `animate-fade-in transition-opacity
-        ${style ?? ""}`
-              : `animate-pulse`}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </>
-      )
-      : (
-        <>
-          <div class={`${style ?? ""}`}>
-             <Skeleton lines={skeletonLines}/>
-          </div>
-        </>
-      )
-  );
+  return html
+    ? (
+      <div
+        class={`animate-fade-in transition-opacity ${props.style ?? ""}`}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    )
+    : (
+      <div class={`${props.style} ${skeletonStyle}`}>
+        <Skeleton lines={skeletonLines} />
+      </div>
+    );
 }
 
 export interface I18nProps {
   labelKey: string;
   style?: string;
-  skeletonLines: number;
+  skeletonProps?: SkeletonProps;
+}
+
+export interface SkeletonProps {
+  lines?: number;
+  style?: string;
 }
 
 async function getLabel(labelKey: string): Promise<string> {
@@ -72,20 +63,17 @@ async function getLabel(labelKey: string): Promise<string> {
   return await response.json();
 }
 
-
 function Skeleton({ lines = 2 }: { lines?: number }) {
   return (
-    <div class="mx-auto w-full max-w-3xl my-4">
-      <div class="animate-pulse space-y-2">
-        {Array.from({ length: lines }).map((_, i) => (
-          <div
-            key={i}
-            class={`h-2 bg-nigreydo rounded ${
-              i === lines - 1 ? "w-2/3" : "w-5/6"
-            }`}
-          />
-        ))}
-      </div>
+    <div class="animate-pulse space-y-2">
+      {Array.from({ length: lines }).map((_, i) => (
+        <div
+          key={i}
+          class={`h-2 bg-nigreydo rounded ${
+            i === lines - 1 ? "w-2/3" : "w-5/6"
+          }`}
+        />
+      ))}
     </div>
   );
 }

@@ -45,6 +45,7 @@ function Experience(experience: ExperienceProps) {
         <I18nText
           labelKey={`experiences.${experience.name}.description`}
           style="text-justify leading-relaxed my-4 text-albedo"
+          skeletonProps={{ lines: 3 }}
         />
       </section>
     </>
