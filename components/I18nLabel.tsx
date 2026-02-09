@@ -1,18 +1,19 @@
-import { marked } from "marked";
 
-export default function I18nText(props: I18nProps) {
+
+
+
+export default function I18nLabel(props: I18nProps) {
   const MIN_SKELETON_MS = 700;
 
   const { lines: skeletonLines = 1, style: skeletonStyle = "" } =
     props.skeletonProps ?? {};
 
   const label = props.label ?? "Missing label";
-  const parsed = marked.parse(label, { async: false }) as string;
-  return "Missing label" !== parsed
+  return "Missing label" !== label
     ? (
       <div
         class={`animate-fade-in transition-opacity ${props.style ?? ""}`}
-        dangerouslySetInnerHTML={{ __html: parsed }}
+        dangerouslySetInnerHTML={{ __html: label }}
       />
     )
     : (
