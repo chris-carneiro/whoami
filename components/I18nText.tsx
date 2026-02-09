@@ -1,42 +1,18 @@
 import { marked } from "marked";
 
-import { useEffect, useState } from "preact/hooks";
-
 export default function I18nText(props: I18nProps) {
   const MIN_SKELETON_MS = 700;
 
   const { lines: skeletonLines = 1, style: skeletonStyle = "" } =
     props.skeletonProps ?? {};
 
-  // const [html, setHtml] = useState<string>("");
-  // useEffect(() => {
-  //   let mounted = true;
-
-  //   async function load() {
-  //     const start = performance.now();
-
-  //     const label = await getLabel(props.labelKey);
-  //     const parsed = marked.parse(label, { async: false }) as string;
-
-  //     const elapsed = performance.now() - start;
-  //     const remaining = Math.max(0, MIN_SKELETON_MS - elapsed);
-
-  //     setTimeout(() => {
-  //       if (mounted) setHtml(parsed);
-  //     }, remaining);
-  //   }
-
-  //   load();
-  //   return () => {
-  //     mounted = false;
-  //   };
-  // }, [props.labelKey]);
-
-  return props.label
+  const label = props.label ?? "Missing label";
+  const parsed = marked.parse(label, { async: false }) as string;
+  return "Missing label" !== parsed
     ? (
       <div
         class={`animate-fade-in transition-opacity ${props.style ?? ""}`}
-        dangerouslySetInnerHTML={{ __html: props.label}}
+        dangerouslySetInnerHTML={{ __html: parsed }}
       />
     )
     : (
@@ -56,12 +32,6 @@ export interface I18nProps {
 export interface SkeletonProps {
   lines?: number;
   style?: string;
-}
-
-async function getLabel(labelKey: string): Promise<string> {
-  const response = await fetch(`/api/lang/label?labelkey=${labelKey}`);
-
-  return await response.json();
 }
 
 function Skeleton({ lines = 2 }: { lines?: number }) {
