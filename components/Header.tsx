@@ -14,7 +14,7 @@ export default function Header({ lang }: Props) {
         <Prompt />
         <div class="flex flex-row items-center">
           <BsTranslate />
-          <LanguageSwitch lang={lang} />
+          {/* <LanguageSwitch lang={lang} /> */}
         </div>
       </div>
     </header>
