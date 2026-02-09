@@ -1,4 +1,4 @@
-import I18nText from "./I18nText.tsx";
+import I18nLabel from "./I18nLabel.tsx";
 
 export interface ExperiencesProps {
   labels?: Record<string, string>;
@@ -42,17 +42,17 @@ function Experience(experience: ExperienceProps) {
       <section
         class={`w-full min-w-0 max-w-7xl mx-auto mb-4 sm:px-10 text-lg sm:text-xl ${experience.class}`}
       >
-        <I18nText
+        <I18nLabel
           label={experience.labels?.[`experiences.${experience.name}.jobtitle`]}
           style="font-semibold sm:text-3xl mb-1.5"
         />
 
-        <I18nText
+        <I18nLabel
           label={experience.labels?.[`experiences.${experience.name}.details`]}
           style="font-semibold sm:text-xl text-lg"
         />
 
-        <I18nText
+        <I18nLabel
           label={experience.labels
             ?.[`experiences.${experience.name}.description`]}
           style="text-justify leading-relaxed my-4 text-albedo"

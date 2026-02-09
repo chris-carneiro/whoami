@@ -1,4 +1,4 @@
-import I18nText from "./I18nText.tsx";
+import I18nLabel from "./I18nLabel.tsx";
 import { BsGithub, BsLinkedin } from "@preact-icons/bs";
 import { ExternalLink } from "./ExternalLink.tsx";
 
@@ -21,9 +21,9 @@ export default function Hero(props: HeroProps) {
               <div class="text-xl sm:text-3xl md:text-4xl font-bold">
                 Firstname Lastname<span class="text-rubedo">.</span>
               </div>
-
+            
               <div class="min-h-10">
-                <I18nText
+                <I18nLabel
                   label={heroTitle}
                   style="text-xl md:text-3xl font-semibold my-4"
                 />
@@ -32,7 +32,7 @@ export default function Hero(props: HeroProps) {
           </div>
 
           <div class="min-h-60dvh sm:min-h-72">
-            <I18nText
+            <I18nLabel
               label={heroIntro}
               labelKey="hero.intro"
               style="text-justify md:text-xl leading-relaxed text-albedo"

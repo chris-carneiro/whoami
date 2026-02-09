@@ -1,4 +1,4 @@
-import I18nText from "./I18nText.tsx";
+import I18nLabel from "./I18nLabel.tsx";
 
 import { ExternalLink } from "./ExternalLink.tsx";
 
@@ -13,7 +13,7 @@ export default function Footer(props: FooterProps) {
       <div class="flex flex-col sm:flex-row gap-4 justify-between items-center max-w-(--breakpoint-xl) mx-auto w-full sm:px-6 md:px-8 text-base">
         <div class="flex flex-row items-center gap-1.5">
           <div class="min-w-32 min-h-8 flex items-center">
-            <I18nText
+            <I18nLabel
               label={footerLabel}
               style="text-citrinitas font-bold animate-pulse"
             />

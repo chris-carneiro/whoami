@@ -1,7 +1,5 @@
 import { BsTranslate } from "@preact-icons/bs";
-import LanguageSwitch from "../islands/LanguageSwitch.tsx";
 import { Lang } from "../utils/lang.ts";
-
 
 interface Props {
   lang: Lang;
