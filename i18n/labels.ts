@@ -30,3 +30,7 @@ export const LABELS = new Map<Lang, Record<string, string>>([
   [FR, flattenedFr],
   [EN, flattenedEn],
 ]);
+
+export function loadLabels(lang: Lang): Record<string, string> {
+  return LABELS.get(lang) ?? {};
+}

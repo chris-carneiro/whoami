@@ -1,45 +1,42 @@
-import { IS_BROWSER } from "fresh/runtime";
 import { marked } from "marked";
 
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 export default function I18nText(props: I18nProps) {
-
-  const [html, setHtml] = useState<string>("");
   const MIN_SKELETON_MS = 700;
 
   const { lines: skeletonLines = 1, style: skeletonStyle = "" } =
     props.skeletonProps ?? {};
 
+  // const [html, setHtml] = useState<string>("");
   // useEffect(() => {
-    if (!IS_BROWSER) return;
   //   let mounted = true;
 
-    async function load() {
-  //     // const start = performance.now();
+  //   async function load() {
+  //     const start = performance.now();
 
-      const label = await getLabel(props.labelKey);
-      const parsed = marked.parse(label, { async: false }) as string;
-      setHtml(parsed);
-  //     // const elapsed = performance.now() - start;
-  //     const remaining = Math.max(0, MIN_SKELETON_MS - 200);
+  //     const label = await getLabel(props.labelKey);
+  //     const parsed = marked.parse(label, { async: false }) as string;
+
+  //     const elapsed = performance.now() - start;
+  //     const remaining = Math.max(0, MIN_SKELETON_MS - elapsed);
 
   //     setTimeout(() => {
   //       if (mounted) setHtml(parsed);
   //     }, remaining);
-    }
+  //   }
 
-    load();
+  //   load();
   //   return () => {
   //     mounted = false;
   //   };
   // }, [props.labelKey]);
 
-  return html
+  return props.label
     ? (
       <div
         class={`animate-fade-in transition-opacity ${props.style ?? ""}`}
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: props.label}}
       />
     )
     : (
@@ -50,7 +47,8 @@ export default function I18nText(props: I18nProps) {
 }
 
 export interface I18nProps {
-  labelKey: string;
+  label?: string;
+  labelKey?: string;
   style?: string;
   skeletonProps?: SkeletonProps;
 }

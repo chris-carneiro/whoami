@@ -1,9 +1,17 @@
-import I18nText from "../islands/I18nText.tsx";
+import I18nText from "./I18nText.tsx";
 import { BsGithub, BsLinkedin } from "@preact-icons/bs";
 import { ExternalLink } from "./ExternalLink.tsx";
 
 // Fix Cumulative Layout shift by giving container div a min height
-export default function Hero() {
+
+export interface HeroProps {
+  labels?: Record<string, string>;
+}
+
+export default function Hero(props: HeroProps) {
+  const heroTitle = props.labels?.["hero.job.title"] ?? "hero.job.title"; // keep the labelKey as straightfoward fallback.
+  const heroIntro = props.labels?.["hero.intro"] ?? "hero.intro"; // keep the labelKey as straightfoward fallback.
+
   return (
     <section class="min-h-screen bg-nigredo flex items-center">
       <div class="mx-auto w-full max-w-6xl px-[clamp(1.5rem,4vw,3rem)] flex flex-col justify-between">
@@ -16,7 +24,7 @@ export default function Hero() {
 
               <div class="min-h-10">
                 <I18nText
-                  labelKey="hero.job.title"
+                  label={heroTitle}
                   style="text-xl md:text-3xl font-semibold my-4"
                 />
               </div>
@@ -25,6 +33,7 @@ export default function Hero() {
 
           <div class="min-h-60dvh sm:min-h-72">
             <I18nText
+              label={heroIntro}
               labelKey="hero.intro"
               style="text-justify md:text-xl leading-relaxed text-albedo"
             />
