@@ -1,7 +1,6 @@
-import { EN, FR, Lang } from "../utils/lang.ts";
-
-import en from "./json/en.json" with { type: "json" };
-import fr from "./json/fr.json" with { type: "json" };
+import { EN, FR, Lang } from "../utils.ts";
+import en from "../static/json/en.json" with { type: "json" };
+import fr from "../static/json/fr.json" with { type: "json" };
 
 export type Labels = typeof en | typeof fr;
 
@@ -32,5 +31,6 @@ export const LABELS = new Map<Lang, Record<string, string>>([
 ]);
 
 export function loadLabels(lang: Lang): Record<string, string> {
-  return LABELS.get(lang) ?? {};
+  const safeLang = lang ?? "en";
+  return LABELS.get(safeLang) ?? flattenedEn;
 }

@@ -11,15 +11,15 @@ export function Experiences(props: ExperiencesProps) {
         <h1 class="sm:text-3xl text-2xl font-semibold text-albedo">
           Experience
         </h1>
-        <Experience name="chanel" labels={props.labels} />
-        <Experience name="kayentis" labels={props.labels} />
-        <Experience name="open" labels={props.labels} />
-        <Experience name="wifitoggler" labels={props.labels} />
-        <Experience name="laroueverte" labels={props.labels} />
-        <Experience name="astek" labels={props.labels} />
-        <Experience name="inilead" labels={props.labels} />
-        <Experience name="comarch" labels={props.labels} />
-        <Experience name="capgemini" labels={props.labels} />
+        <Experience name="chanel" labels={props?.labels} />
+        <Experience name="kayentis" labels={props?.labels} />
+        <Experience name="open" labels={props?.labels} />
+        <Experience name="wifitoggler" labels={props?.labels} />
+        <Experience name="laroueverte" labels={props?.labels} />
+        <Experience name="astek" labels={props?.labels} />
+        <Experience name="inilead" labels={props?.labels} />
+        <Experience name="comarch" labels={props?.labels} />
+        <Experience name="capgemini" labels={props?.labels} />
       </div>
     </>
   );
@@ -32,11 +32,6 @@ export interface ExperienceProps {
 }
 
 function Experience(experience: ExperienceProps) {
-  const jobTitle =
-    experience.labels?.[`experiences.${experience.name}.jobtitle`] ??
-      "not defined";
-
-
   return (
     <>
       <section
@@ -56,7 +51,6 @@ function Experience(experience: ExperienceProps) {
           label={experience.labels
             ?.[`experiences.${experience.name}.description`]}
           style="text-justify leading-relaxed my-4 text-albedo"
-          skeletonProps={{ lines: 3 }}
         />
       </section>
     </>

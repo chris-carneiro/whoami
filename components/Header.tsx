@@ -1,17 +1,19 @@
-import { BsTranslate } from "@preact-icons/bs";
-import { Lang } from "../utils/lang.ts";
+// import { BsTranslate } from "@preact-icons/bs";
+
+import { Lang } from "../utils.ts";
+
 
 interface Props {
   lang: Lang;
 }
 
-export default function Header({ lang }: Props) {
+export default function Header() {
   return (
     <header class="sticky top-0 z-10 px-4 max-w-full text-left text-albedo bg-nigreydo">
       <div class="mx-auto flex gap-3 items-center justify-between w-full max-w-(--breakpoint-xl)">
         <Prompt />
         <div class="flex flex-row items-center">
-          <BsTranslate />
+          {/* <BsTranslate /> */}
           {/* <LanguageSwitch lang={lang} /> */}
         </div>
       </div>

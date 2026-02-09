@@ -1,8 +1,12 @@
 import { createDefine } from "fresh";
-import { Lang } from "./lang.ts";
+
+export type Lang = "en" | "fr";
+export const FR = "fr" as Lang;
+export const EN = "en" as Lang;
+
 
 export interface State {
-  lang: Lang;
+  lang: string;
 }
 
 export const define = createDefine<State>();

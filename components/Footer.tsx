@@ -7,7 +7,9 @@ export interface FooterProps {
 }
 
 export default function Footer(props: FooterProps) {
-  const footerLabel = props.labels?.["footer.hireme"] ?? "footer.hireme";
+  const footerLabel = props?.labels?.["footer.hireme"] ?? "footer.hireme";
+  console.log("footer props", footerLabel);
+
   return (
     <footer class="sm:sticky bottom-0 bg-nigreydo min-h-9">
       <div class="flex flex-col sm:flex-row gap-4 justify-between items-center max-w-(--breakpoint-xl) mx-auto w-full sm:px-6 md:px-8 text-base">
@@ -19,7 +21,7 @@ export default function Footer(props: FooterProps) {
             />
           </div>
           <div class="min-h-8 flex items-center">
-            <ExternalLink href="/malt" aria-label="Malt profile">
+            <ExternalLink href="/https://www.malt.fr/profile/christophecarneiro" aria-label="Malt profile">
               <img
                 src="/malt_logo.svg"
                 alt="The malt.com freelancer platform pink logo"
@@ -31,7 +33,7 @@ export default function Footer(props: FooterProps) {
         </div>
 
         <div class="flex items-center gap-8 min-h-8">
-          <ExternalLink href="/whoami">
+          <ExternalLink href="https://github.com/chris-carneiro/whoami">
             Source
           </ExternalLink>
 

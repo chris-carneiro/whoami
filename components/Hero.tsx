@@ -1,5 +1,5 @@
 import I18nLabel from "./I18nLabel.tsx";
-import { BsGithub, BsLinkedin } from "@preact-icons/bs";
+// import { BsGithub, BsLinkedin } from "@preact-icons/bs";
 import { ExternalLink } from "./ExternalLink.tsx";
 
 // Fix Cumulative Layout shift by giving container div a min height
@@ -9,9 +9,9 @@ export interface HeroProps {
 }
 
 export default function Hero(props: HeroProps) {
-  const heroTitle = props.labels?.["hero.job.title"] ?? "hero.job.title"; // keep the labelKey as straightfoward fallback.
-  const heroIntro = props.labels?.["hero.intro"] ?? "hero.intro"; // keep the labelKey as straightfoward fallback.
-
+  const heroTitle = props?.labels?.["hero.job.title"] ?? "hero.job.title"; // keep the labelKey as straightfoward fallback.
+  const heroIntro = props?.labels?.["hero.intro"] ?? "hero.intro"; // keep the labelKey as straightfoward fallback.
+  
   return (
     <section class="min-h-screen bg-nigredo flex items-center">
       <div class="mx-auto w-full max-w-6xl px-[clamp(1.5rem,4vw,3rem)] flex flex-col justify-between">
@@ -34,19 +34,18 @@ export default function Hero(props: HeroProps) {
           <div class="min-h-60dvh sm:min-h-72">
             <I18nLabel
               label={heroIntro}
-              labelKey="hero.intro"
               style="text-justify md:text-xl leading-relaxed text-albedo"
             />
           </div>
 
           <div class="flex justify-end">
             <footer class="flex gap-4">
-              <ExternalLink href="/github" aria-label="GitHub">
-                <BsGithub size={32} />
+              <ExternalLink href="https://github.com/chris-carneiro" aria-label="GitHub">
+                {/* <BsGithub size={32} /> */}
               </ExternalLink>
 
-              <ExternalLink href="/linkedin" aria-label="LinkedIn">
-                <BsLinkedin size={32} />
+              <ExternalLink href="https://www.linkedin.com/in/chriscarneiro/" aria-label="LinkedIn">
+                {/* <BsLinkedin size={32} /> */}
               </ExternalLink>
             </footer>
           </div>
