@@ -10,12 +10,6 @@ import { Experiences } from "../components/Experiences.tsx";
 
 export default function TranslationIsland({ initialLabels, initialLang }: { initialLabels: Labels; initialLang: Lang }) {
   return (
-    <TranslationProvider initLabels={initialLabels} initLang={initialLang}>
-      <Header />
-      <Hero />
-      <LanguageSwitch />
-      <Experiences />
-      <Footer />
-    </TranslationProvider>
+    <>hello world</>
   );
 }
