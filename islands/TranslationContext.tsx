@@ -13,16 +13,16 @@ export interface TranslationContextProps {
 }
 
 
-export const TranslationContext = createContext<TranslationContextProps | null>(null);
+export const Context = createContext<TranslationContextProps | null>(null);
 
 
 export function useTranslation() {
-  const ctx = useContext(TranslationContext);
+  const ctx = useContext(Context);
   if (!ctx) throw new Error("useTranslation must be inside TranslationProvider");
   return ctx;
 }
 
-export function TranslationProvider(
+export function TranslationContext(
   { initLabels: initialLabels, initLang: initialLang, children }: {
     initLabels: Labels;
     initLang: Lang;
@@ -33,8 +33,8 @@ export function TranslationProvider(
   const [lang, setLang] = useState<Lang>(initialLang);
 
   return (
-    <TranslationContext.Provider value={{ labels, lang, setLabels, setLang }}>
+    <Context.Provider value={{ labels, lang, setLabels, setLang }}>
       {children}
-    </TranslationContext.Provider>
+    </Context.Provider>
   );
 }
