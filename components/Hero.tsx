@@ -41,7 +41,7 @@ export default function Hero(props: HeroProps) {
                 href="https://github.com/chris-carneiro"
                 aria-label="GitHub"
               >
-                <img src="/github.png" alt="LinkedIn" class="h-8 w-auto" />
+                <img src="/github.png" alt="GitHub" class="h-8 w-auto" />
               </ExternalLink>
 
               <ExternalLink

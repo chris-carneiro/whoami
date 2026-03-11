@@ -60,8 +60,8 @@ export function Experiences(props: ExperiencesProps) {
     </>
   );
 
-  function labelkey(companyKey: string, category: string) {
-    return `experiences.${companyKey}.${category}`;
+  function labelkey(company: string, section: string) {
+    return `experiences.${company}.${section}`;
   }
 }
 

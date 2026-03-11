@@ -11,6 +11,5 @@ export default function I18nLabel(props: I18nProps) {
 
 export interface I18nProps {
   label?: string;
-  labelKey?: string;
   style?: string;
 }

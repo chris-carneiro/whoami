@@ -1,7 +1,7 @@
 import LanguageSwitch from "../islands/LanguageSwitch.tsx";
 import { Lang } from "../utils.ts";
 
-interface Props {
+export interface Props {
   lang: Lang;
 }
 

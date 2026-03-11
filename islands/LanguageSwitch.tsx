@@ -1,6 +1,6 @@
 import { EN, FR, Lang } from "../utils.ts";
 
-interface Props {
+export interface Props {
   lang: Lang;
 }
 
