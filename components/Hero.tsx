@@ -4,12 +4,11 @@ import { ExternalLink } from "./ExternalLink.tsx";
 // Fix Cumulative Layout shift by giving container div a min height
 
 export interface HeroProps {
-  labels?: Record<string, string>;
+  heroTitle?: string;
+  heroIntro?: string
 }
 
 export default function Hero(props: HeroProps) {
-  const heroTitle = props?.labels?.["hero.job.title"] ?? "hero.job.title"; // keep the labelKey as straightfoward fallback.
-  const heroIntro = props?.labels?.["hero.intro"] ?? "hero.intro"; // keep the labelKey as straightfoward fallback.
 
   return (
     <section class="min-h-screen bg-nigredo flex items-center">
@@ -23,7 +22,7 @@ export default function Hero(props: HeroProps) {
 
               <div class="min-h-10">
                 <I18nLabel
-                  label={heroTitle}
+                  label={props.heroTitle}
                   style="text-xl md:text-3xl font-semibold my-4"
                 />
               </div>
@@ -32,7 +31,7 @@ export default function Hero(props: HeroProps) {
 
           <div class="min-h-60dvh sm:min-h-72">
             <I18nLabel
-              label={heroIntro}
+              label={props.heroIntro}
               style="text-justify md:text-xl leading-relaxed text-albedo"
             />
           </div>

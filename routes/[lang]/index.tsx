@@ -11,9 +11,9 @@ export default define.page(function Home(ctx) {
   return (
     <>
       <Header lang={ctx.state.lang} />
-      <Hero labels={labels} />
+      <Hero heroTitle={labels?.["hero.job.title"]} heroIntro={labels?.["hero.intro"]} />
       <Experiences labels={labels} />
-      <Footer labels={labels} />
+      <Footer hireme={labels?.["footer.hireme"]} />
     </>
   );
 });
