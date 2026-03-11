@@ -27,11 +27,6 @@ function Prompt() {
         &gt;
         <span class="animate-blink">_</span>
       </span>
-      {/* Commands */}
-      {
-        /* <span className="ml-4 text-citrinitas">{name}</span>
-      <span className="text-rubedo animate-pulse">.</span> */
-      }
     </div>
   );
 }
