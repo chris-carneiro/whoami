@@ -6,24 +6,12 @@ interface Props {
 
 
 export default function LanguageSwitch({ lang }: Props) {
-  async function switchLang(newLang: Lang) {
-
-    await fetch("/api/lang", {
-      method: "POST",
-      body: JSON.stringify({ lang: newLang }),
-      headers: { "Content-Type": "application/json" }
-    });
-
-    location.reload();
-  }
-
   return (
     <select
-      value={lang}
-      onChange={(e) => switchLang(e.currentTarget.value as Lang)}
+      onChange={(e) => { location.href = `/${e.currentTarget.value}`; }}
     >
-      <option value="fr">{FR}</option>
-      <option value="en">{EN}</option>
+      <option value="fr" selected={lang === FR}>{FR}</option>
+      <option value="en" selected={lang === EN}>{EN}</option>
     </select>
   );
 }
