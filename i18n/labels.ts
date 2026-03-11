@@ -1,20 +1,15 @@
 import { EN, FR, Lang } from "../utils.ts";
-import en from "../static/json/en.json" with { type: "json" };
-import fr from "../static/json/fr.json" with { type: "json" };
 
-export type Labels = typeof en | typeof fr;
-
-const _check: Labels = en || fr;
+const LABELS = new Map<Lang, Record<string, string>>();
 
 function flattenLabels(
-  obj: Record<string, string>,
+  obj: Record<string, unknown>,
   prefix = "",
 ): Record<string, string> {
   return Object.entries(obj).reduce((acc, [key, value]) => {
     const path = prefix ? `${prefix}.${key}` : key;
-
     if (typeof value === "object" && value !== null) {
-      Object.assign(acc, flattenLabels(value, path));
+      Object.assign(acc, flattenLabels(value as Record<string, unknown>, path));
     } else {
       acc[path] = String(value);
     }
@@ -22,15 +17,16 @@ function flattenLabels(
   }, {} as Record<string, string>);
 }
 
-const flattenedFr = flattenLabels(fr as unknown as Record<string, string>);
-const flattenedEn = flattenLabels(en as unknown as Record<string, string>);
-
-export const LABELS = new Map<Lang, Record<string, string>>([
-  [FR, flattenedFr],
-  [EN, flattenedEn],
-]);
+export async function warmupLabels(): Promise<void> {
+  const [{ default: en }, { default: fr }] = await Promise.all([
+    import("../static/json/en.json", { with: { type: "json" } }),
+    import("../static/json/fr.json", { with: { type: "json" } }),
+  ]);
+  LABELS.set(EN, flattenLabels(en as Record<string, unknown>));
+  LABELS.set(FR, flattenLabels(fr as Record<string, unknown>));
+}
 
 export function loadLabels(lang: Lang): Record<string, string> {
-  const safeLang = lang ?? "en";
-  return LABELS.get(safeLang) ?? flattenedEn;
+  const safeLang = lang ?? EN;
+  return LABELS.get(safeLang) ?? LABELS.get(EN) ?? {};
 }
