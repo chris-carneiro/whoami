@@ -21,7 +21,7 @@ export default function Footer(props: FooterProps) {
             />
           </div>
           <div class="min-h-8 flex items-center">
-            <ExternalLink href="/https://www.malt.fr/profile/christophecarneiro" aria-label="Malt profile">
+            <ExternalLink href="https://www.malt.fr/profile/christophecarneiro" aria-label="Malt profile">
               <img
                 src="/malt_logo.svg"
                 alt="The malt.com freelancer platform pink logo"
