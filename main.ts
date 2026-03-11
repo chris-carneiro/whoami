@@ -1,4 +1,3 @@
-
 import { App, staticFiles } from "fresh";
 import { State } from "./utils.ts";
 import { warmupLabels } from "./i18n/labels.ts";

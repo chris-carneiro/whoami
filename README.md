@@ -1,7 +1,9 @@
 # Whoami Materia
 
 ## Motivation
-This project is meant to become a portfolio along with a playground of experimentations around the framework Deno Fresh. 
+
+This project is meant to become a portfolio along with a playground of
+experimentations around the framework Deno Fresh.
 
 ### Usage
 

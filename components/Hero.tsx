@@ -5,11 +5,10 @@ import { ExternalLink } from "./ExternalLink.tsx";
 
 export interface HeroProps {
   heroTitle?: string;
-  heroIntro?: string
+  heroIntro?: string;
 }
 
 export default function Hero(props: HeroProps) {
-
   return (
     <section class="min-h-screen bg-nigredo flex items-center">
       <div class="mx-auto w-full max-w-6xl px-[clamp(1.5rem,4vw,3rem)] flex flex-col justify-between">
@@ -43,14 +42,17 @@ export default function Hero(props: HeroProps) {
                 aria-label="GitHub"
               >
                 <img src="/github.png" alt="LinkedIn" class="h-8 w-auto" />
-
               </ExternalLink>
 
               <ExternalLink
                 href="https://www.linkedin.com/in/chriscarneiro/"
                 aria-label="LinkedIn"
               >
-                <img src="/linkedin-white.png" alt="LinkedIn" class="h-8 w-auto" />
+                <img
+                  src="/linkedin-white.png"
+                  alt="LinkedIn"
+                  class="h-8 w-auto"
+                />
               </ExternalLink>
             </footer>
           </div>

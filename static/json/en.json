@@ -27,7 +27,7 @@
       "details": "Open source project - 2015 - 2016",
       "description": "I designed and released an open-source Android application for automatic Wi-Fi management. [Wi-Fi-Toggler - GitHub](https://github.com/chris-carneiro/Wi-Fi-Toggler)"
     },
-    "laroueverte": {  
+    "laroueverte": {
       "jobtitle": "Freelance Software Engineer",
       "details": "LaRoueVerte.com - Contract - Grenoble, France - Mar 2015 to Mar 2015",
       "description": "First Client: LaRoueVerte.com<br> Feasability study and prototyping of a carpooling Android application. (The content is under NDA)"
@@ -54,6 +54,6 @@
     }
   },
   "footer": {
-    "hireme" : "Hire me via"
+    "hireme": "Hire me via"
   }
 }

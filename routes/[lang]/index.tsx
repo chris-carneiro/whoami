@@ -1,4 +1,3 @@
-
 import { Experiences } from "../../components/Experiences.tsx";
 import Footer from "../../components/Footer.tsx";
 import Header from "../../components/Header.tsx";
@@ -11,7 +10,10 @@ export default define.page(function Home(ctx) {
   return (
     <>
       <Header lang={ctx.state.lang} />
-      <Hero heroTitle={labels?.["hero.job.title"]} heroIntro={labels?.["hero.intro"]} />
+      <Hero
+        heroTitle={labels?.["hero.job.title"]}
+        heroIntro={labels?.["hero.intro"]}
+      />
       <Experiences labels={labels} />
       <Footer hireme={labels?.["footer.hireme"]} />
     </>
